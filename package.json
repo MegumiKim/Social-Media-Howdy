@@ -4,7 +4,8 @@
   "description": "A social media application built with Bootstrap",
   "main": "index.js",
   "scripts": {
-    "build": "sass input:output"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "bootstrap": "^5.2.2"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.56.1"
   }
 }
