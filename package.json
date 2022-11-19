@@ -1,0 +1,23 @@
+{
+  "name": "social-media-howdy",
+  "version": "0.0.1",
+  "description": "A socail media application built with Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegumiKim/Social-Media-Howdy.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "frameworks"
+  ],
+  "author": "Megumi Kimura <kimuramegumi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MegumiKim/Social-Media-Howdy/issues"
+  },
+  "homepage": "https://github.com/MegumiKim/Social-Media-Howdy#readme"
+}
