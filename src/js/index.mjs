@@ -1,6 +1,7 @@
-export { BASE_URL } from "./api/constants.mjs";
+// export { BASE_URL } from "./api/constants.mjs";
 
-import { signUpListeners } from "./listeners/sign-up.mjs";
+import * as listeners from "./listeners/index.mjs";
 import * as storage from "././storage/index.mjs";
 
-signUpListeners();
+listeners.signUpListener();
+listeners.loginListener();
