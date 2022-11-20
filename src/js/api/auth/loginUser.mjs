@@ -1,7 +1,7 @@
 import { BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
-const registerURL = `${BASE_URL}auth/login`;
+const registerURL = `${BASE_URL}/auth/login`;
 const userAlert = document.querySelector("#user-alert");
 
 /**

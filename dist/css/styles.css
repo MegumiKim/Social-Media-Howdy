@@ -10983,4 +10983,8 @@ textarea.form-control-lg {
   color: #343a40;
 }
 
+.card {
+  max-height: 400px;
+}
+
 /*# sourceMappingURL=styles.css.map */
