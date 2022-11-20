@@ -4,44 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Welcome to Howdy. Share your story and check out updates from your friends"
-    />
+    <meta name="description" content="Welcome to Howdy. Share your story and check out updates from your friends">
     <title>Howdy | Home</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <script src="../src/js/index.mjs" type="module"></script>
-    <script
-      src="https://kit.fontawesome.com/175ecb4e25.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="../../src/js/index.mjs" type="module"></script>
+    <script src="https://kit.fontawesome.com/175ecb4e25.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-my-bg">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Howdy</a>
-        <div
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarScroll"
-          aria-controls="navbarScroll"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <img
-            src="/img/IMG_20181126_210142.jpeg"
-            alt="profile picture"
-            width="32"
-            height="32"
-            class="rounded-circle"
-          />
+          src="/img/IMG_20181126_210142.jpeg"
+          alt="profile picture"
+          width="32"
+          height="32"
+          class="rounded-circle"
+        />
         </div>
         <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul
-            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-            style="--bs-scroll-height: 100%"
-          >
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100%">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
@@ -53,15 +36,8 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-special" type="submit">
-              Search
-            </button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-special" type="submit">Search</button>
           </form>
         </div>
       </div>
@@ -69,23 +45,45 @@
     <div class="container">
       <main>
         <section class="col-lg-6 m-auto" id="new-post">
-          <form class="modal-body d-flex gx-1">
-            <textarea type="text" class="form-control"></textarea>
-            <button class="btn bg-light">
-              <i class="fa-regular fa-image"></i>
-            </button>
-          </form>
-          <div class="invalid-feedback">Content is missing</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Publish</button>
+      <!-- Button trigger modal -->     
+      <input type="text" class="form-control col-lg-6 my-3" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-trigger="focus" placeholder="Howdy! How are ya?">
+      </input>
+<!-- Modal -->
+      <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="postModalLabel">Create a post</h1>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <form class="modal-body gx-1" id="createPost">
+              <div class="form-group mb-3">
+                <label for="">Title</label>
+                <input type="text" name="title" class="form-controle" required>
+              </div>
+            <div class="form-group mb-3">
+              <label for="">Body</label>
+              <textarea type="text" class="form-control" name="body"></textarea>
+            </div>
+            <!-- <div class="form-group mb-3">
+              <label for="">Tags</label>
+              <input type="text"  class="form-controle" name="tags" >
+            </div> -->
+            <div class="form-group mb-3">
+              <label for="">Media URL</label>
+              <input type="url"  class="form-controle" name="media" >
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Publish</button>
+            </div>
+            </form>
           </div>
+        </div>
+      </div>
+        </section>
+        <section>
+          <div id="posts-container"></div>
         </section>
       </main>
       <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -101,3 +99,4 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+
