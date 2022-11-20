@@ -14,30 +14,23 @@
     <nav class="navbar navbar-expand-md bg-my-bg">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Howdy</a>
-        <div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <img
-          src="/img/IMG_20181126_210142.jpeg"
-          alt="profile picture"
-          width="32"
-          height="32"
-          class="rounded-circle"
-        />
-        </div>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100%">
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse show" id="navbarsExample04" style="">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/profile.html">Profile</a>
+              <a class="nav-link" href="../profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/log-in.html">Log out</a>
+              <a class="nav-link" href="../index.html">Log out</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-special" type="submit">Search</button>
+          <form role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
           </form>
         </div>
       </div>
@@ -65,10 +58,6 @@
               <label for="">Body</label>
               <textarea type="text" class="form-control" name="body"></textarea>
             </div>
-            <!-- <div class="form-group mb-3">
-              <label for="">Tags</label>
-              <input type="text"  class="form-controle" name="tags" >
-            </div> -->
             <div class="form-group mb-3">
               <label for="">Media URL</label>
               <input type="url"  class="form-controle" name="media" >
