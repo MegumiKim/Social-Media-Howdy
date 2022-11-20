@@ -5,7 +5,6 @@ export async function renderPosts() {
   const posts = await postsMethod.fetchPosts();
 
   posts.forEach((post) => {
-    console.log(post);
     const card = new thumbnail(
       post.title,
       post.body,

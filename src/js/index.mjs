@@ -6,5 +6,6 @@ import * as posts from "./posts/renderPosts.mjs";
 
 listeners.signUpListener();
 listeners.loginListener();
+listeners.createPostListener();
 
 posts.renderPosts();
