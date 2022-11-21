@@ -8,7 +8,7 @@
       name="description"
       content="Welcome to Howdy. Share your story and check out updates from your friends"
     />
-    <title>Howdy | Home</title>
+    <title>Howdy</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script src="../../src/js/index.mjs" type="module"></script>
     <script
@@ -19,7 +19,7 @@
   <body>
     <nav class="navbar navbar-expand-md bg-my-bg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Howdy</a>
+        <a class="navbar-brand" href="/posts/index.html">Howdy</a>
         <button
           class="navbar-toggler collapsed"
           type="button"
@@ -34,11 +34,10 @@
         <div
           class="navbar-collapse collapse show"
           id="navbarsExample04"
-          style=""
         >
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
+              <a class="nav-link" aria-current="page" href="/posts/index.html"
                 >Home</a
               >
             </li>
@@ -46,7 +45,7 @@
               <a class="nav-link" href="../profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.html">Log out</a>
+              <a class="nav-link" href="/">Log out</a>
             </li>
           </ul>
           <form role="search">
@@ -61,7 +60,12 @@
       </div>
     </nav>
     <div class="container">
-      <main></main>
+      <main>
+        <div class="container">
+          <div class="row" id="post-container" >
+            
+          </div>
+      </main>
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">© 2022 Social App</p>
         <ul class="list-inline">
