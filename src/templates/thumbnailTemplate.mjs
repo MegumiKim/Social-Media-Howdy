@@ -6,7 +6,7 @@ export function thumbnailTemplate(postData) {
       <a class="card-text" href="../post/index.html?id=${postData.id}">${postData.title}</a>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <button data-card="view" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+          <button data-card="view" data-id="${postData.id}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
         </div>
         <small class="text-muted">${postData.date}</small>
       </div>
