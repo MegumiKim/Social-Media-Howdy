@@ -1,11 +1,16 @@
 import { thumbnailTemplate } from "../../templates/thumbnailTemplate.mjs";
 
 export default class thumbnailClass {
-  constructor(title, body, media = "https://picsum.photos/200/300", date, id) {
+  constructor(title, body, media, date, id) {
+    const DateFormatOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
     this.title = title;
     this.body = body;
     this.media = media;
-    this.date = new Date(date).toLocaleDateString();
+    this.date = new Date(date).toLocaleDateString("en-GB", DateFormatOptions);
     this.id = id;
   }
 

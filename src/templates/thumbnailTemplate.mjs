@@ -1,5 +1,5 @@
 export function thumbnailTemplate(postData) {
-  return `<div class='col'><div class="card shadow-sm">
+  return `<div class='col col-md-6 col-lg-3'><div class="card shadow-sm">
     <div class="card-img-top" style="overflow-y:clip; ">
 <img src="${postData.media}" style="width: 100%;" alt="${postData.title}"></img></div>
     <div class="card-body">

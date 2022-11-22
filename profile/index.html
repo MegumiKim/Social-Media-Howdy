@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Check and update your profile here" />
+    <title>Howdy | Profile</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="../../src/js/index.mjs" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/175ecb4e25.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-my-bg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/posts/index.html">Howdy</a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse show" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/posts/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Log out</a>
+            </li>
+          </ul>
+          <form role="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <main class="row">
+        <section id="about-me" class="col-12 col-md-7 mt-md-4">
+          <div class="row" id="profile-container"></div>
+        </section>
+
+        <section id="contacts-list" class="col-12 col-md-5">
+          <h3 class="py-1 mt-2">All Users</h3>
+          <div class="list-group w-auto" id="profiles-container"></div>
+        </section>
+      </main>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2022 Social App</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- <script src="/fetchPost.js" ></script> -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

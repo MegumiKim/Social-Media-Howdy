@@ -11,14 +11,14 @@ export async function renderSinglePost() {
 
     if (!id) {
       container.innerHTML =
-        "<h3>An error occured. Go back to the previous page</2>";
+        "<h3>An error occurred. Go back to the previous page</2>";
     } else {
       const singlePostURL = `${BASE_URL}/posts/ ${id}`;
       const post = await postsMethod.fetchPosts(singlePostURL);
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${post.title}`;
       if (!post.media) {
-        post.media = "https://picsum.photos/300/200";
+        post.media = "";
       }
       const singlePost = new singlePostClass(
         post.title,

@@ -1,8 +1,6 @@
 import * as postsMethod from "../api/posts/index.mjs";
-import thumbnail from "./thumbnailClass.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import thumbnailClass from "./thumbnailClass.mjs";
-import { thumbnailTemplate } from "../../templates/thumbnailTemplate.mjs";
 
 const container = document.querySelector("#posts-container");
 

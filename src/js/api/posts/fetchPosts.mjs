@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants.mjs";
+// import { BASE_URL } from "../constants.mjs";
 import { authOption } from "../makeOptions.mjs";
 
 // const postsURL = `${BASE_URL}/posts`;
