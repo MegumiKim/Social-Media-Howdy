@@ -1,6 +1,6 @@
 import { thumbnailTemplate } from "../../templates/thumbnailTemplate.mjs";
 
-export default class thumbnailClass {
+export class thumbnailClass {
   constructor(title, body, media, date, id) {
     const DateFormatOptions = {
       year: "numeric",

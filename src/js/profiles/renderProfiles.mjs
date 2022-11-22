@@ -1,6 +1,6 @@
 import * as postsMethod from "../api/posts/index.mjs";
+import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-import userThumbnailClass from "../Class/userThumbnailClass.mjs";
 
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
@@ -13,7 +13,7 @@ export async function renderProfiles() {
       // if (!profile.media) {
       //   profile.media = "https://picsum.photos/300/200";
       // }
-      const card = new userThumbnailClass(
+      const card = new Class.userThumbnailClass(
         profile.name,
         profile.email,
         profile.banner,

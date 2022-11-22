@@ -16,7 +16,7 @@
   <body>
     <nav class="navbar navbar-expand-md bg-my-bg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/posts/index.html">Howdy</a>
+        <a class="navbar-brand" href="../posts/index.html">Howdy</a>
         <button
           class="navbar-toggler collapsed"
           type="button"
@@ -55,10 +55,15 @@
     </nav>
     <div class="container">
       <main class="row">
-        <section id="about-me" class="col-12 col-md-7 mt-md-4">
-          <div class="row" id="profile-container"></div>
-        </section>
-
+        <div class="col-12 col-md-7 mt-md-4">
+          <section id="about-me" class="col-12">
+            <div class="row" id="my-profile-container"></div>
+          </section>
+          <section id="my-posts-container" class="col-12">
+            <h3 class="py-1 mt-2">Wall</h3>
+            <div class="list-group w-auto row" id="my-posts-container"></div>
+          </section>
+        </div>
         <section id="contacts-list" class="col-12 col-md-5">
           <h3 class="py-1 mt-2">All Users</h3>
           <div class="list-group w-auto" id="profiles-container"></div>

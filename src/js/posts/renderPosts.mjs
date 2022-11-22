@@ -1,6 +1,6 @@
 import * as postsMethod from "../api/posts/index.mjs";
+import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-import thumbnailClass from "./thumbnailClass.mjs";
 
 const container = document.querySelector("#posts-container");
 
@@ -14,7 +14,7 @@ export async function renderPosts() {
       if (!post.media) {
         post.media = "https://picsum.photos/300/200";
       }
-      const card = new thumbnailClass(
+      const card = new Class.thumbnailClass(
         post.title,
         post.body,
         post.media,

@@ -2,13 +2,13 @@ import * as postsMethod from "../api/posts/index.mjs";
 import * as Class from "../Class/index.mjs";
 // import userProfileClass from "../Class/userProfileClass.mjs";
 import { BASE_URL } from "../api/constants.mjs";
+import { load } from "../storage/load.mjs";
 
-const container = document.querySelector("#profile-container");
+const container = document.querySelector("#my-profile-container");
 
-export async function renderSingleProfile() {
+export async function renderMyProfile() {
   if (container) {
-    const url = new URL(location.href);
-    const name = url.searchParams.get("name");
+    const name = load("otherDetails").name;
 
     if (!name) {
       container.innerHTML =

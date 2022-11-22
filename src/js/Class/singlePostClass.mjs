@@ -1,12 +1,11 @@
 import { singlePostTemplate } from "../../templates/singlePostTemplate.mjs";
 
-export default class singlePostClass {
+export class singlePostClass {
   constructor(title, body, media = "", date, id) {
     this.title = title;
     this.body = body;
     this.media = media;
     this.date = new Date(date).toLocaleDateString();
-
     this.id = id;
   }
 

@@ -1,6 +1,7 @@
 import { userProfileTemplate } from "../../templates/index.mjs";
+import { renderPosts } from "../posts/renderPosts.mjs";
 
-export default class userProfileClass {
+export class userProfileClass {
   constructor(name, email, banner, avatar) {
     this.name = name;
     this.email = email;
@@ -12,6 +13,10 @@ export default class userProfileClass {
     const template = userProfileTemplate(this);
 
     return template;
+  }
+
+  get myPosts() {
+    const posts = renderPosts;
   }
 
   render(parent = document.body) {
