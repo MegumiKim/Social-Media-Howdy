@@ -17,7 +17,7 @@ export async function renderMyProfile() {
       const singleProfileURL = `${BASE_URL}/profiles/${name}`;
       const profile = await postsMethod.fetchPosts(singleProfileURL);
       const pageTitle = document.querySelector("title");
-      pageTitle.innerHTML = `HOWDY | ${profile.title}`;
+      pageTitle.innerHTML = `HOWDY | ${profile.name}`;
 
       if (!profile.avatar) {
         profile.avatar = "";
@@ -30,6 +30,7 @@ export async function renderMyProfile() {
       );
 
       singleProfile.render(container);
+      singleProfile.update();
     }
   }
 }

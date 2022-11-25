@@ -9,6 +9,8 @@ export function makeOptions(method, body, auth = "") {
     },
     body: JSON.stringify(body),
   };
+
+  console.log(options);
   return options;
 }
 

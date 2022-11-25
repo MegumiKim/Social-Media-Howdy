@@ -1,16 +1,15 @@
-import { createPost } from "../api/posts/create.mjs";
+import { postComment } from "../api/posts/index.mjs";
 
-export async function createPostListener() {
-  const form = document.querySelector("#createPost");
+export async function postCommentListener() {
+  const form = document.querySelector("#comment");
 
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      // const form = event.target;
+
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
-
-      createPost(post);
+      postComment(post);
       form.reset();
     });
   }

@@ -31,10 +31,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="navbar-collapse collapse show"
-          id="navbarsExample04"
-        >
+        <div class="navbar-collapse collapse show" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/posts/index.html"
@@ -62,9 +59,23 @@
     <div class="container">
       <main>
         <div class="container">
-          <div class="row" id="post-container" >
-            
-          </div>
+          <div class="row" id="post-container"></div>
+
+          <form class="col col-lg-6 m-auto" id="comment">
+            <div class="form-group mb-3">
+              <label for="comment-input">Comment</label>
+              <textarea
+                id="comment-input"
+                type="text"
+                class="form-control"
+                name="body"
+                required
+                max-length="150"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post comment</button>
+          </form>
+        </div>
       </main>
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">© 2022 Social App</p>

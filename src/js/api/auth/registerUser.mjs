@@ -16,7 +16,6 @@ export async function registerUser(options) {
   userAlert.innerHTML = "";
   try {
     const response = await fetch(registerURL, options);
-    console.log(response);
 
     const json = await response.json();
     const { id } = json;

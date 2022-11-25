@@ -1,4 +1,5 @@
 import { userProfileTemplate } from "../../templates/index.mjs";
+import { editProfileListener } from "../listeners/editProfile.mjs";
 import { renderPosts } from "../posts/renderPosts.mjs";
 
 export class UserProfileClass {
@@ -16,13 +17,18 @@ export class UserProfileClass {
   }
 
   get myPosts() {
-    const posts = renderPosts;
+    const posts = renderPosts();
+  }
+
+  update() {
+    editProfileListener();
   }
 
   render(parent = document.body) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.template, "text/html");
-    const element = doc.querySelector(".col-lg-4");
+    const element = doc.querySelector(".card");
+
     parent.append(element);
   }
 }

@@ -1,5 +1,6 @@
 import { commentsTemplate } from "../../templates/commentTemplate.mjs";
 import { singlePostTemplate } from "../../templates/singlePostTemplate.mjs";
+import { postCommentListener } from "../listeners/postComment.mjs";
 
 export class SinglePostClass {
   constructor(title, body, media = "", date, id, author, comments) {
@@ -20,16 +21,21 @@ export class SinglePostClass {
     return this.comments.map((comment) => commentsTemplate(comment));
   }
 
+  postComment() {
+    postCommentListener();
+  }
+
   render(parent = document.body) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.template, "text/html");
-    const element = doc.querySelector(".col");
+    const element = doc.querySelector("#singlePost");
     parent.append(element);
 
-    if (this.comments.length > 1) {
+    if (this.comments.length > 0) {
       const commentDoc = parser.parseFromString(this.comment, "text/html");
       this.comment.forEach((comment) => {
-        element.append(commentDoc.querySelector(".card"));
+        console.log(comment);
+        element.append(commentDoc.querySelector(".comment"));
       });
     }
   }

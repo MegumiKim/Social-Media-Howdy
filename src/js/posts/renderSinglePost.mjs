@@ -1,7 +1,7 @@
 import * as postsMethod from "../api/posts/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-
+import { postCommentListener } from "../listeners/postComment.mjs";
 const container = document.querySelector("#post-container");
 
 export async function renderSinglePost() {
@@ -32,9 +32,9 @@ export async function renderSinglePost() {
       );
 
       singlePost.render(container);
-      // console.log(singlePost.template);
+      singlePost.postComment();
 
-      // singlePost.logDate(post.created);
+      // postCommentListener();
     }
   }
 }
