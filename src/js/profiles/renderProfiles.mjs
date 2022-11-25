@@ -13,7 +13,7 @@ export async function renderProfiles() {
       // if (!profile.media) {
       //   profile.media = "https://picsum.photos/300/200";
       // }
-      const card = new Class.userThumbnailClass(
+      const card = new Class.UserThumbnailClass(
         profile.name,
         profile.email,
         profile.banner,

@@ -1,27 +1,36 @@
+import { commentsTemplate } from "../../templates/commentTemplate.mjs";
 import { singlePostTemplate } from "../../templates/singlePostTemplate.mjs";
 
-export class singlePostClass {
-  constructor(title, body, media = "", date, id) {
+export class SinglePostClass {
+  constructor(title, body, media = "", date, id, author, comments) {
     this.title = title;
     this.body = body;
     this.media = media;
     this.date = new Date(date).toLocaleDateString();
     this.id = id;
+    this.author = author;
+    this.comments = comments;
   }
 
   get template() {
-    const post = singlePostTemplate(this);
-    return post;
+    return singlePostTemplate(this);
+  }
+
+  get comment() {
+    return this.comments.map((comment) => commentsTemplate(comment));
   }
 
   render(parent = document.body) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.template, "text/html");
     const element = doc.querySelector(".col");
-    // const viewBtn = element.querySelector('button[data-card="view"]');
-    // viewBtn.addEventListener("click", console.log());
-
-    // element.addEventListener("click", console.log());
     parent.append(element);
+
+    if (this.comments.length > 1) {
+      const commentDoc = parser.parseFromString(this.comment, "text/html");
+      this.comment.forEach((comment) => {
+        element.append(commentDoc.querySelector(".card"));
+      });
+    }
   }
 }

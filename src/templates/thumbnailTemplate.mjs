@@ -9,6 +9,7 @@ export function thumbnailTemplate(postData) {
           <button data-card="view" data-id="${postData.id}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
         </div>
         <small class="text-muted">${postData.date}</small>
+        <p> By ${postData.author}
       </div>
       </div>
     </div>

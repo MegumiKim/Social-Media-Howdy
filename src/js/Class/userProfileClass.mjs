@@ -1,7 +1,7 @@
 import { userProfileTemplate } from "../../templates/index.mjs";
 import { renderPosts } from "../posts/renderPosts.mjs";
 
-export class userProfileClass {
+export class UserProfileClass {
   constructor(name, email, banner, avatar) {
     this.name = name;
     this.email = email;

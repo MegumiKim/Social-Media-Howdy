@@ -22,7 +22,7 @@ export async function renderMyProfile() {
       if (!profile.avatar) {
         profile.avatar = "";
       }
-      const singleProfile = new Class.userProfileClass(
+      const singleProfile = new Class.UserProfileClass(
         profile.name,
         profile.email,
         profile.banner,

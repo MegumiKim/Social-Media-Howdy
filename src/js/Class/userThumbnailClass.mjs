@@ -1,6 +1,6 @@
 import { userThumbnailTemplate } from "../../templates/userThumbnailTemplate.mjs";
 
-export class userThumbnailClass {
+export class UserThumbnailClass {
   constructor(name, email, banner, avatar) {
     this.name = name;
     this.email = email;

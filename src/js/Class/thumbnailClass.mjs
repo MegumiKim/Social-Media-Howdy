@@ -1,7 +1,7 @@
 import { thumbnailTemplate } from "../../templates/thumbnailTemplate.mjs";
 
-export class thumbnailClass {
-  constructor(title, body, media, date, id) {
+export class ThumbnailClass {
+  constructor(title, body, media, date, id, author) {
     const DateFormatOptions = {
       year: "numeric",
       month: "short",
@@ -12,6 +12,7 @@ export class thumbnailClass {
     this.media = media;
     this.date = new Date(date).toLocaleDateString("en-GB", DateFormatOptions);
     this.id = id;
+    this.author = author;
   }
 
   get template() {
