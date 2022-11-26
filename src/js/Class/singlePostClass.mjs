@@ -33,8 +33,8 @@ export class SinglePostClass {
 
     if (this.comments.length > 0) {
       const commentDoc = parser.parseFromString(this.comment, "text/html");
+
       this.comment.forEach((comment) => {
-        console.log(comment);
         element.append(commentDoc.querySelector(".comment"));
       });
     }

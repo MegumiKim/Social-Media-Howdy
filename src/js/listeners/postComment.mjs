@@ -6,7 +6,7 @@ export async function postCommentListener() {
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-
+      console.log("post comment");
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
       postComment(post);

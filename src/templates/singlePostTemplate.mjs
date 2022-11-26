@@ -17,5 +17,19 @@ export function singlePostTemplate(postData) {
         </div>
       </div>
     </div>
+    <form class="col mt-4 m-auto" id="comment">
+    <div class="form-group mb-3">
+      <label for="comment-input">Comment</label>
+      <textarea
+        id="comment-input"
+        type="text"
+        class="form-control"
+        name="body"
+        required
+        max-length="150"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Post comment</button>
+  </form>
   </div>`;
 }
