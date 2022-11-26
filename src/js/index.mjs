@@ -5,13 +5,14 @@ import * as profile from "./profiles/index.mjs";
 listeners.signUpListener();
 listeners.loginListener();
 listeners.createPostListener();
+listeners.myProfileLinkListener();
 // listeners.postCommentListener();
 // listeners.editProfileListener();
 
 posts.renderPosts();
 posts.renderSinglePost();
-posts.renderMyPosts();
+// posts.renderMyPosts();
 profile.renderProfiles();
 profile.renderSingleProfile();
 profile.renderUserSpecificPosts();
-profile.renderMyProfile();
+// profile.renderMyProfile();

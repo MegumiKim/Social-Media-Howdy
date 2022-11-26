@@ -24,7 +24,7 @@ export async function loginUser(options) {
     if (accessToken) {
       storage.save("accessToken", accessToken);
       storage.save("otherDetails", otherDetails);
-      window.location.href = "../../../../posts/index.html";
+      window.location.replace("../../../../posts/index.html");
     } else {
       const { errors } = json;
       errors.forEach(({ message }) => {

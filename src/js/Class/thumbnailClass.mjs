@@ -27,7 +27,7 @@ export class ThumbnailClass {
     const viewBtn = element.querySelector('button[data-card="view"]');
 
     viewBtn.addEventListener("click", (event) => {
-      window.location.href = `/post/index.html?id=${this.id}`;
+      window.location.replace(`/post/index.html?id=${this.id}`);
     });
 
     // element.addEventListener("click", console.log());

@@ -14,11 +14,11 @@ export function makeOptions(method, body, auth = "") {
   return options;
 }
 
-export function authOption() {
+export function authOption(method = "GET") {
   const token = load("accessToken");
 
   return {
-    method: "GET",
+    method: method,
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,

@@ -1,6 +1,6 @@
 export function thumbnailTemplate(postData) {
   return `
-  <div class='col mx-auto my-3 col-12 col-md-5' ><div class="card shadow-sm">
+  <div class='col mx-auto my-3' ><div class="card shadow-sm">
     <div class="card-img-top" style="overflow-y:clip; ">
       <img src="${postData.media}" style="width: 100%;" alt="${postData.title}">
       </img>

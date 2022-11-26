@@ -10983,4 +10983,8 @@ textarea.form-control-lg {
   color: #343a40;
 }
 
+#my-profile-link {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=styles.css.map */
