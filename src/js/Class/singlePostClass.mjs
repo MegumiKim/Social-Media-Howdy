@@ -1,13 +1,10 @@
-import { commentsTemplate } from "../../templates/commentTemplate.mjs";
-import { mySinglePostTemplate } from "../../templates/index.mjs";
-import { deletePostListener } from "../listeners/deletePost.mjs";
-import { editPostListener } from "../listeners/editPost.mjs";
-import { postCommentListener } from "../listeners/postComment.mjs";
+import * as templates from "../../templates/index.mjs";
+import * as listeners from "../listeners/index.mjs";
 
 // const container = document.querySelector("#post-container");
 
 export class SinglePostClass {
-  constructor(title, body, media = "", date, id, author, comments, itsMe) {
+  constructor(title, body, media = "", date, id, author, comments, myPost) {
     this.title = title;
     this.body = body;
     this.media = media;
@@ -15,27 +12,27 @@ export class SinglePostClass {
     this.id = id;
     this.author = author;
     this.comments = comments;
-    this.itsMe = itsMe;
+    this.myPost = myPost;
   }
 
   get template() {
-    return mySinglePostTemplate(this);
+    return templates.singlePost(this);
   }
 
   get comment() {
-    return this.comments.map((comment) => commentsTemplate(comment));
+    return this.comments.map((comment) => template.comment(comment));
   }
 
   postComment() {
-    postCommentListener();
+    listeners.postCommentListener();
   }
 
   edit() {
-    editPostListener();
+    listeners.editPostListener();
   }
 
   delete() {
-    deletePostListener();
+    listeners.deletePostListener();
   }
 
   render(parent = document.body) {
@@ -54,9 +51,7 @@ export class SinglePostClass {
       });
     }
 
-    console.log(doc);
-
-    if (this.itsMe) {
+    if (this.myPost) {
       editBtn.style.display = "block";
       deleteBtn.style.display = "block";
     }

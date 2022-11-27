@@ -1,6 +1,6 @@
 import * as API from "../api/index.mjs";
 
-export function loginListener() {
+export function login() {
   const form = document.querySelector("#login-form");
 
   if (form) {

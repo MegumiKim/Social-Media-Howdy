@@ -1,5 +1,4 @@
 import { editPost } from "../api/posts/index.mjs";
-import { renderSinglePost } from "../posts/renderSinglePost.mjs";
 
 const container = document.querySelector("#post-container");
 

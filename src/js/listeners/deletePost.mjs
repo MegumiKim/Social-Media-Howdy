@@ -5,9 +5,6 @@ export async function deletePostListener() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    const form = event.target;
     deletePost();
-    form.reset();
   });
 }

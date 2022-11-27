@@ -1,3 +1,15 @@
 // .card {
 //   max-height: 400px;
 // }
+
+.card a {
+  text-decoration: none;
+}
+
+.thumbnail {
+  transition: all 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+  transform: scale(1.03);
+}

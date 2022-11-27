@@ -1,4 +1,4 @@
-export function commentsTemplate(postData) {
+export function comment(postData) {
   const date = new Date(postData.created).toLocaleDateString();
   return `
 <div class="card my-3 mx-sm-3 p-3 row comment">

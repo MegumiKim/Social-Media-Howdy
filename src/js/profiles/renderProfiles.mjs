@@ -9,16 +9,11 @@ export async function renderProfiles() {
   if (container) {
     const profiles = await postsMethod.fetchPosts(profileURL);
 
-    profiles.forEach((profile) => {
-      // if (!profile.media) {
-      //   profile.media = "https://picsum.photos/300/200";
+    profiles.forEach(({ name, email, banner, avatar }) => {
+      // if (!avatar) {
+      //   avatar = "https://picsum.photos/id/141/2048/1365";
       // }
-      const card = new Class.UserThumbnailClass(
-        profile.name,
-        profile.email,
-        profile.banner,
-        profile.avatar
-      );
+      const card = new Class.UserThumbnailClass(name, email, banner, avatar);
 
       card.render(container);
     });

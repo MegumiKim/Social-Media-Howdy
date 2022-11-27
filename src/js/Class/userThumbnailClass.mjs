@@ -1,4 +1,4 @@
-import { userThumbnailTemplate } from "../../templates/userThumbnailTemplate.mjs";
+import { userThumbnail } from "../../templates/index.mjs";
 
 export class UserThumbnailClass {
   constructor(name, email, banner, avatar) {
@@ -9,7 +9,7 @@ export class UserThumbnailClass {
   }
 
   get template() {
-    const template = userThumbnailTemplate(this);
+    const template = userThumbnail(this);
 
     return template;
   }

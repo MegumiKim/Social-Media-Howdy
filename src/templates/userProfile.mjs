@@ -29,7 +29,7 @@ export function userProfileTemplate(profile) {
               <label for="">Banner </label>
               <input type="url"  class="form-control" name="banner" >
             </div>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
           </form>
         </div>
       </div>

@@ -1,4 +1,4 @@
-export function mySinglePostTemplate(postData) {
+export function singlePost(postData) {
   return `
   <div class='col col-lg-6 m-auto' id='singlePost'>
     <div class="card shadow-sm">
@@ -13,7 +13,7 @@ export function mySinglePostTemplate(postData) {
           <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
             <!-- Button trigger modal -->
-            <button id="editBtn" style="display:none" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-edit-form">
+            <button id="editBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-edit-form">
             Edit Post
             </button>
             <button id="deleteBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-delete-form">Delete</button>
@@ -49,7 +49,7 @@ export function mySinglePostTemplate(postData) {
                   <p>Are you sure you want to delete the post?<p>
                   <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Delete</button>
                   </div>
               </form>
             </div>
@@ -82,7 +82,7 @@ export function mySinglePostTemplate(postData) {
                     </div>
                     <div class="modal-footer">
                       <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-primary">Update</button>
+                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
                     </div>
                 </form>
               </div>
