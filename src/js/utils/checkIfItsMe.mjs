@@ -1,5 +1,10 @@
 import { load } from "../storage/load.mjs";
 
+/** Check if the name is same as the username
+ * saved in the local storage
+ *
+ * @param {string} name name of the post's author
+ * */
 export function checkIfItsMe(name) {
   const myName = load("otherDetails").name;
 
