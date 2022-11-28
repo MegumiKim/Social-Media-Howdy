@@ -1,35 +1,32 @@
 import * as postsMethod from "../api/posts/index.mjs";
 import * as Class from "../Class/index.mjs";
-import { BASE_URL } from "../api/constants.mjs";
-import { load } from "../storage/load.mjs";
-import { checkIfItsMe } from "../utils/checkMyName.mjs";
+import * as constants from "../api/constants.mjs";
+import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
+import { errorMessage } from "../../templates/errorMessage.mjs";
 
 const container = document.querySelector("#post-container");
 
+/**
+ * Identify the specific post by id and make a new single post Class.
+ */
 export async function renderSinglePost() {
-  if (container) {
-    const url = new URL(location.href);
-    const id = url.searchParams.get("id");
+  try {
+    if (container) {
+      const url = new URL(location.href);
+      const id = url.searchParams.get("id");
 
-    if (!id) {
-      container.innerHTML = `<h3>An error occurred. Go back to the previous page</h3>
-        <button class='btn' onclick="history.back()">Back</button>`;
-    } else {
-      const singlePostURL = `${BASE_URL}/posts/${id}?_author=true&_comments=true`;
+      const singlePostURL = `${constants.BASE_URL}/posts/${id}?_author=true&_comments=true`;
       const post = await postsMethod.fetchPosts(singlePostURL);
-
       const author = post.author.name;
       const itsMe = checkIfItsMe(author);
-      console.log(itsMe);
 
-      console.log(post);
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${post.title}`;
       if (!post.media) {
-        post.media = "";
+        post.media = constants.blankPostImgURL;
       }
 
-      const singlePost = new Class.SinglePostClass(
+      const singlePost = new Class.SinglePost(
         post.title,
         post.body,
         post.media,
@@ -44,8 +41,9 @@ export async function renderSinglePost() {
       singlePost.postComment();
       singlePost.edit();
       singlePost.delete();
-
-      // postCommentListener();
     }
+  } catch (error) {
+    errorMessage(container);
+    console.log(error);
   }
 }

@@ -1,8 +1,12 @@
+import { blankPostImgURL, blankUserImgURL } from "../js/api/constants.mjs";
+
 export function userProfileTemplate(profile) {
   return `
-  <div class="card m-auto my-3 p-4" >
-    <img src="${profile.banner}" width="auto" height="140" alt="banner for ${profile.name}" >
-    <img class="rounded-circle m-auto" src="${profile.avatar}" alt="${profile.name}" width="140" height="140">
+  <div class="card m-auto mb-4 p-4" >
+    <div class="d-flex flex-wrap g-3 mb-3">
+    <img class=" m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';" width="200" height="200" alt="banner for ${profile.name}" >
+    <img class="rounded-circle m-auto" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200">
+    </div>
     <h2>${profile.name}</h2>
     <p>${profile.email}</p>
 

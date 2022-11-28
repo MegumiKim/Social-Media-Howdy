@@ -6,10 +6,7 @@ export function checkIfItsMe(name) {
   let itsMe = false;
 
   if (name === myName) {
-    console.log("its me");
     itsMe = true;
-  } else {
-    console.log("its not me");
   }
   return itsMe;
 }

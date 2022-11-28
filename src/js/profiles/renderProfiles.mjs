@@ -6,17 +6,23 @@ const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
 export async function renderProfiles() {
-  if (container) {
-    const profiles = await postsMethod.fetchPosts(profileURL);
+  try {
+    if (container) {
+      const profiles = await postsMethod.fetchPosts(profileURL);
 
-    profiles.forEach(({ name, email, banner, avatar }) => {
-      // if (!avatar) {
-      //   avatar = "https://picsum.photos/id/141/2048/1365";
-      // }
-      const card = new Class.UserThumbnailClass(name, email, banner, avatar);
+      profiles.forEach(({ name, email, banner, avatar }) => {
+        // if (!avatar) {
+        //   avatar = "https://picsum.photos/id/141/2048/1365";
+        // }
+        const card = new Class.UserThumbnail(name, email, banner, avatar);
 
-      card.render(container);
-    });
+        card.render(container);
+      });
+    }
+  } catch (error) {
+    container.innerHTML = `<div class="col"><h3>An error occurred. Go back to the previous page</h3>
+  <button class='btn btn-secondary' onclick="history.back()">Back</button></div>`;
+    console.log(error);
   }
 }
 

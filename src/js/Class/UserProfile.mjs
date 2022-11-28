@@ -2,7 +2,7 @@ import { userProfileTemplate } from "../../templates/index.mjs";
 import { editProfileListener } from "../listeners/editProfile.mjs";
 import { renderPosts } from "../posts/renderPosts.mjs";
 
-export class UserProfileClass {
+export class UserProfile {
   constructor(name, email, banner, avatar, myProfile) {
     this.name = name;
     this.email = email;

@@ -1,5 +1,9 @@
 import { createPost } from "../api/posts/create.mjs";
 
+/**
+ * Listen to submit event on create post form and
+ * pass the input value to createPost function.
+ */
 export async function createPostListener() {
   const form = document.querySelector("#createPost");
 

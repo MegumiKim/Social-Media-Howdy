@@ -1,5 +1,9 @@
 import * as API from "../api/index.mjs";
 
+/**
+ * Listen to submit event and
+ * pass the input value to registerUser function.
+ */
 export async function signUp() {
   const form = document.querySelector("#sign-up-form");
 

@@ -9,11 +9,9 @@ const postsURL = `${BASE_URL}/posts?_author=true`;
 export async function renderPosts() {
   if (container) {
     const posts = await postsMethod.fetchPosts(postsURL);
+
     posts.forEach((post) => {
-      if (!post.media) {
-        post.media = "https://picsum.photos/300/200";
-      }
-      const card = new Class.ThumbnailClass(
+      const card = new Class.Thumbnail(
         post.title,
         post.body,
         post.media,

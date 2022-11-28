@@ -1,7 +1,10 @@
 import { editPost } from "../api/posts/index.mjs";
 
-const container = document.querySelector("#post-container");
-
+/**
+ * Listen to submit event and
+ * pass the input value to editPost function
+ * and reset the form.
+ */
 export async function editPostListener() {
   const form = document.querySelector("#editPost");
 
@@ -11,7 +14,7 @@ export async function editPostListener() {
     const form = event.target;
     const formData = new FormData(form);
     const postData = Object.fromEntries(formData.entries());
-    console.log(postData);
+
     editPost(postData);
     form.reset();
   });

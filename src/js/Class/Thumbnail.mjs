@@ -1,6 +1,7 @@
 import { postThumbnail } from "../../templates/index.mjs";
 
-export class ThumbnailClass {
+/**Class representing a post thumbnail (card) */
+export class Thumbnail {
   constructor(title, body, media, date, id, author) {
     const DateFormatOptions = {
       year: "numeric",
@@ -14,16 +15,16 @@ export class ThumbnailClass {
     this.id = id;
     this.author = author;
   }
-
+  /** Get HTML template for a post thumbnail*/
   get template() {
-    const template = postThumbnail(this);
-    return template;
+    return postThumbnail(this);
   }
 
+  /**render the thumbnail template in container */
   render(parent = document.body) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this.template, "text/html");
-    const element = doc.querySelector(".col");
+    const element = doc.querySelector(".thumbnail");
 
     parent.append(element);
   }

@@ -1,6 +1,6 @@
 import * as postsMethod from "../api/posts/index.mjs";
 import * as Class from "../Class/index.mjs";
-// import userProfileClass from "../Class/userProfileClass.mjs";
+
 import { BASE_URL } from "../api/constants.mjs";
 import { load } from "../storage/load.mjs";
 
