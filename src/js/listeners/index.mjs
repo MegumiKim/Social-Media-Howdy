@@ -6,3 +6,4 @@ export * from "./editProfile.mjs";
 export * from "./myProfileLink.mjs";
 export * from "./editPost.mjs";
 export * from "./deletePost.mjs";
+export * from "./searchPost.mjs";

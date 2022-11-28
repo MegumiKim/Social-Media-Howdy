@@ -5,6 +5,7 @@ listeners.signUp();
 listeners.login();
 listeners.createPostListener();
 listeners.myProfileLink();
+listeners.searchPostListener();
 
 renders.renderPosts();
 renders.renderSinglePost();
