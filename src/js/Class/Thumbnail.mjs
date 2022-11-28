@@ -2,6 +2,10 @@ import { postThumbnail } from "../../templates/index.mjs";
 
 /**Class representing a post thumbnail (card) */
 export class Thumbnail {
+  /**
+   * Create a post thumbnail.
+   * Date will be formatted without time.
+   */
   constructor(title, body, media, date, id, author) {
     const DateFormatOptions = {
       year: "numeric",
