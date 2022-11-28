@@ -8,7 +8,6 @@ listeners.myProfileLink();
 
 renders.renderPosts();
 renders.renderSinglePost();
-
 renders.renderProfiles();
 renders.renderSingleProfile();
 renders.renderUserSpecificPosts();
