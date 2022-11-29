@@ -1,4 +1,5 @@
 import * as API from "../api/index.mjs";
+import { load } from "../storage/load.mjs";
 
 export function login() {
   const form = document.querySelector("#login-form");

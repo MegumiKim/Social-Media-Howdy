@@ -7,6 +7,7 @@ export function searchPostListener() {
     search.addEventListener("keypress", (event) => {
       if (event.keyCode === 13) {
         event.preventDefault();
+
         searchPost(search.value);
       }
     });

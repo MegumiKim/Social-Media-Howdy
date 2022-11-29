@@ -1,4 +1,7 @@
 export function save(key, item) {
-  const storedItem = JSON.stringify(item);
-  localStorage.setItem(key, storedItem);
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+export function saveToSessionStorage(key, item) {
+  sessionStorage.setItem(key, JSON.stringify(item));
 }

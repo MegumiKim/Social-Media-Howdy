@@ -26,7 +26,7 @@
               <a class="nav-link" id="my-profile-link" >Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">Log out</a>
+              <a class="nav-link" id="logout-btn">Log out</a>
             </li>
           </ul>
           <form role="search" id="searchForm">
@@ -43,9 +43,10 @@
     </nav>
     <div class="container">
       <main>
-        <section class="col-lg-6 m-auto mb-5" id="new-post">
-      <!-- Button trigger modal -->     
-      <input type="text" class="form-control col-lg-6 my-3" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-trigger="focus" placeholder="Howdy! How are ya?">
+        <section class="col-lg-6 m-auto mb-2" id="new-post">
+          <!-- Button trigger modal -->     
+          <h4 for="#new-post">Create a new post</h4>
+      <input id="#new-post" type="text" class="form-control col-lg-6 mb-3 border border-4" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-trigger="focus" placeholder="Howdy! How are ya?">
       </input>
 <!-- Modal -->
       <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
@@ -80,6 +81,20 @@
         </section>
         <section>
           <div class="container">
+            <div class="btn-group mb-3" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary">??</button>
+              <button type="button" class="btn btn-primary">By Reaction</button>
+            
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sort by date
+                </button>
+                <ul class="dropdown-menu">
+                  <li><button id="old-to-new-btn" class="dropdown-item" href="#">Old to new</button></li>
+                  <li><button id="new-to-old-btn" class="dropdown-item" href="#">New to old</button></li>
+                </ul>
+              </div>
+            </div>
             <div class="row row-cols-1 row-cols-sm-2 g-4" id="posts-container" >
             <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="posts-container" > -->
               
