@@ -1,11 +1,8 @@
-import * as API from "../api/index.mjs";
+import * as API from "../../api/index.mjs";
+import { load } from "../../storage/load.mjs";
 
-/**
- * Listen to submit event and
- * pass the input value to registerUser function.
- */
-export async function signUp() {
-  const form = document.querySelector("#sign-up-form");
+export function login() {
+  const form = document.querySelector("#login-form");
 
   if (form) {
     form.addEventListener("submit", (event) => {
@@ -14,8 +11,8 @@ export async function signUp() {
       const formData = new FormData(form);
       const signUpDetails = Object.fromEntries(formData.entries());
       const options = API.makeOptions(form.method, signUpDetails);
-
-      API.registerUser(options);
+      console.log(formData);
+      API.loginUser(options);
     });
   }
 }

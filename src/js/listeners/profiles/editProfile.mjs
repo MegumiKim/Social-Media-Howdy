@@ -1,4 +1,4 @@
-import * as requests from "../api/apiRequests/index.mjs";
+import * as requests from "../../api/apiRequests/index.mjs";
 
 export async function editProfileListener() {
   const form = document.querySelector("#editProfile");

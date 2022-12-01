@@ -1,7 +1,7 @@
 import { errorMessage } from "../../templates/errorMessage.mjs";
 import { Thumbnail } from "../Class/Thumbnail.mjs";
 import { loadFromSessionStorage } from "../storage/load.mjs";
-import { filterBySearchWords } from "./filterBySearchWords.mjs";
+import * as filters from "./filters/index.mjs";
 
 const container = document.querySelector("#posts-container");
 
@@ -9,7 +9,7 @@ export async function searchPost(searchValue) {
   try {
     let posts = loadFromSessionStorage("cache");
     container.innerHTML = "";
-    posts = posts.filter((post) => filterBySearchWords(post, searchValue));
+    posts = posts.filter((post) => filters.postsFilter(post, searchValue));
 
     if (posts.length) {
       posts.forEach((post) => {

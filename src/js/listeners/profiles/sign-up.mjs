@@ -1,8 +1,11 @@
-import * as API from "../api/index.mjs";
-import { load } from "../storage/load.mjs";
+import * as API from "../../api/index.mjs";
 
-export function login() {
-  const form = document.querySelector("#login-form");
+/**
+ * Listen to submit event and
+ * pass the input value to registerUser function.
+ */
+export async function signUp() {
+  const form = document.querySelector("#sign-up-form");
 
   if (form) {
     form.addEventListener("submit", (event) => {
@@ -11,8 +14,8 @@ export function login() {
       const formData = new FormData(form);
       const signUpDetails = Object.fromEntries(formData.entries());
       const options = API.makeOptions(form.method, signUpDetails);
-      console.log(formData);
-      API.loginUser(options);
+
+      API.registerUser(options);
     });
   }
 }

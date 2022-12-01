@@ -1,4 +1,4 @@
-export function filterBySearchWords(post, searchValue) {
+export function postsFilter(post, searchValue) {
   if (post.body) {
     if (
       post.body.toLowerCase().includes(searchValue.toLowerCase()) ||

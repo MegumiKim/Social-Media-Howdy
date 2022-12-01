@@ -1,6 +1,6 @@
-import * as sorts from "../filters/index.mjs";
-import { loadFromSessionStorage } from "../storage/load.mjs";
-import { Thumbnail } from "../Class/Thumbnail.mjs";
+import * as sorts from "../../filters/filters/index.mjs";
+import { loadFromSessionStorage } from "../../storage/load.mjs";
+import { Thumbnail } from "../../Class/Thumbnail.mjs";
 const container = document.querySelector("#posts-container");
 
 export function oldToNewListener() {
