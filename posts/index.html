@@ -26,7 +26,7 @@
               <a class="nav-link" id="my-profile-link" >Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="logout-btn">Log out</a>
+              <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#confirm-logout">Log out</a>
             </li>
           </ul>
           <form role="search" id="searchForm">
@@ -54,22 +54,22 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="postModalLabel">Create a post</h1>
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form class="modal-body gx-1" id="createPost">
               <div class="form-group mb-3">
-                <label for="">Title*</label>
+                <label for="">Title (required)</label>
                 <input type="text" class="form-control" name="title" required>
               </div>
             <div class="form-group mb-3">
-              <label for="">Texts*</label>
-              <textarea type="text" class="form-control" name="body" required maxlength="150"></textarea>
+              <label for="">Texts</label>
+              <textarea type="text" class="form-control" name="body"  maxlength="150"></textarea>
             </div>
             <div class="form-group mb-3">
-              <label for="">Media URL (if not provided, random image will be applied)</label>
+              <label for="">Media URL</label>
               <input type="url"  class="form-control" name="media" >
             </div>
-            <p>*required field</p>
+
             <div class="modal-footer">
               <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Publish</button>
@@ -82,11 +82,11 @@
         <section>
           <div class="container">
             <div class="btn-group mb-3" role="group" aria-label="Button group with nested dropdown">
-              <button type="button" class="btn btn-primary">??</button>
-              <button type="button" class="btn btn-primary">By Reaction</button>
-            
+              <button type="button" class="btn btn-secondary">??</button>
+              <button type="button" class="btn btn-secondary">By Reaction</button>
+
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   Sort by date
                 </button>
                 <ul class="dropdown-menu">
@@ -111,7 +111,28 @@
         </ul>
       </footer>
     </div>
-    <!-- <script src="/fetchPost.js" ></script> -->
+
+        <!-- Modal Confirm Logout-->
+        <div class="modal fade" id="confirm-logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Log out</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                    <p>Are you sure you want to logout?<p>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                      <button class="btn btn-primary" 
+                      data-bs-dismiss="modal" id="logout-btn">Log out</button>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

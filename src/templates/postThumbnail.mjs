@@ -6,9 +6,9 @@ export function postThumbnail(postData) {
     <div class="card shadow-sm thumbnail">
       <a href="../post/?id=${postData.id}">
         <div class="d-flex">
-          <div class="card-img-top" style="overflow:clip; width:300px; height:300px;" width="300px" height="300px">
+          <div style="overflow:hidden; width:300px; height:300px;" width="300px" height="300px">
             <img src="${postData.media}"  alt="${postData.title}"
-            onerror="this.onerror=null;this.src='${blankPostImgURL}'" width="100%">
+            onerror="this.onerror=null;this.src='${blankPostImgURL}'" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
             </img>
           </div>
           <div class="card-body">

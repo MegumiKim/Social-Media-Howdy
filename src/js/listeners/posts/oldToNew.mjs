@@ -10,7 +10,7 @@ export function oldToNewListener() {
     sortBtn.addEventListener("click", (event) => {
       event.preventDefault();
 
-      let posts = loadFromSessionStorage("cache");
+      let posts = loadFromSessionStorage("cached-posts");
       posts = sorts.oldToNew(posts);
 
       container.innerHTML = "";

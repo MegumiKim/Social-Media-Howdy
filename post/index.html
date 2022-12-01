@@ -36,7 +36,9 @@
               <a class="nav-link" id="my-profile-link">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="logout-btn">Log out</a>
+              <a 
+              type="button"
+              class="nav-link" data-bs-toggle="modal" data-bs-target="#confirm-logout">Log out</a>
             </li>
           </ul>
           <form role="search" id="searchForm">
@@ -53,6 +55,7 @@
     </nav>
     <div class="container">
       <main>
+        <a type='button' onclick="history.back()">&#8592 Back</a>
         <div class="container">
           <div class="row" id="post-container"></div>
         </div>
@@ -66,7 +69,28 @@
         </ul>
       </footer>
     </div>
-    <!-- <script src="/fetchPost.js" ></script> -->
+      
+        <!-- Modal Confirm Logout-->
+      <div class="modal fade" id="confirm-logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Log out</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  <p>Are you sure you want to logout?<p>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                    <button class="btn btn-primary" 
+                    data-bs-dismiss="modal" id="logout-btn">Log out</button>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

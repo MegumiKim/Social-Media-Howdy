@@ -4,12 +4,15 @@ export function userProfileTemplate(profile) {
   return `
   <div class="card m-auto mb-4 p-4" >
     <div class="d-flex flex-wrap g-3 mb-3">
-    <img class=" m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';" width="200" height="200" alt="banner for ${profile.name}" >
-    <img class="rounded-circle m-auto" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200">
+    <img class=" m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';" width="400" height="200" alt="banner for ${profile.name}" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
+    <img class="rounded-circle m-auto" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200" class="h-100 w-100" style="object-position: center center; object-fit: cover">
     </div>
+    <div class="card-body" style="text-align:center">
+
     <h2>${profile.name}</h2>
     <p>${profile.email}</p>
 
+    </div>
     <!-- Button trigger modal -->
     <button id="editProfileBtn" style="display:none" type="button" class="btn btn-secondary m-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Change Profile Images
