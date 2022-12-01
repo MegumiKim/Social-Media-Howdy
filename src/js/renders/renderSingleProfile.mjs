@@ -1,4 +1,4 @@
-import * as postsMethod from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 import { BASE_URL } from "../api/constants.mjs";
@@ -14,7 +14,7 @@ export async function renderSingleProfile() {
       const itsMe = checkIfItsMe(name);
 
       const singleProfileURL = `${BASE_URL}/profiles/${name}`;
-      const profile = await postsMethod.fetchPosts(singleProfileURL);
+      const profile = await requests.fetchData(singleProfileURL);
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${profile.name}`;
 

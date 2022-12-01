@@ -1,4 +1,4 @@
-import { editPost } from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 
 /**
  * Listen to submit event and
@@ -15,7 +15,7 @@ export async function editPostListener() {
     const formData = new FormData(form);
     const postData = Object.fromEntries(formData.entries());
 
-    editPost(postData);
+    requests.editPost(postData);
     form.reset();
   });
 }

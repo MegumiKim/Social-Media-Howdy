@@ -4,13 +4,11 @@ import { authOption } from "../makeOptions.mjs";
 
 // const postsURL = `${BASE_URL}/posts`;
 
-export async function fetchPosts(url) {
+export async function fetchData(url) {
   try {
     const options = authOption();
     const response = await fetch(url, options);
     const result = await response.json();
-
-    saveToSessionStorage("cache", result);
 
     return result;
   } catch (e) {

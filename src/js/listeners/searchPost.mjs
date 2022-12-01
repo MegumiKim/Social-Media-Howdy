@@ -4,12 +4,8 @@ export function searchPostListener() {
   const search = document.querySelector("#searchInput");
 
   if (search) {
-    search.addEventListener("keypress", (event) => {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-
-        searchPost(search.value);
-      }
+    search.addEventListener("keyup", (event) => {
+      searchPost(search.value);
     });
   }
 }

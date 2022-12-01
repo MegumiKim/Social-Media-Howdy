@@ -1,4 +1,4 @@
-import { createPost } from "../api/posts/create.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 
 /**
  * Listen to submit event on create post form and
@@ -14,7 +14,7 @@ export async function createPostListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      createPost(post);
+      requests.createPost(post);
       form.reset();
     });
   }

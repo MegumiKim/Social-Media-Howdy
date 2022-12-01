@@ -1,4 +1,4 @@
-import * as postsMethod from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 // import userProfileClass from "../Class/userProfileClass.mjs";
 import { BASE_URL, blankPostImgURL } from "../api/constants.mjs";
@@ -15,27 +15,27 @@ export async function renderUserSpecificPosts() {
       const itsMe = checkIfItsMe(name);
 
       const postsByProfileURL = `${BASE_URL}/profiles/${name}/posts?_author=true`;
-      const posts = await postsMethod.fetchPosts(postsByProfileURL);
+      const posts = await requests.fetchData(postsByProfileURL);
 
       if (!posts.length) {
         container.innerHTML = `<h3>No Posts by ${name} :-(</3>`;
+      } else {
+        posts.forEach(({ title, body, media, created, id, author }) => {
+          if (!media) {
+            media = `${blankPostImgURL}`;
+          }
+          const card = new Class.Thumbnail(
+            title,
+            body,
+            media,
+            created,
+            id,
+            author.name,
+            itsMe
+          );
+          card.render(container);
+        });
       }
-
-      posts.forEach(({ title, body, media, created, id, author }) => {
-        if (!media) {
-          media = `${blankPostImgURL}`;
-        }
-        const card = new Class.Thumbnail(
-          title,
-          body,
-          media,
-          created,
-          id,
-          author.name,
-          itsMe
-        );
-        card.render(container);
-      });
     }
   } catch (error) {
     errorMessage(container);

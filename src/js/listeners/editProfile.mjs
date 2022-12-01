@@ -1,4 +1,4 @@
-import { editProfile } from "../api/profile/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 
 export async function editProfileListener() {
   const form = document.querySelector("#editProfile");
@@ -9,7 +9,7 @@ export async function editProfileListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profileData = Object.fromEntries(formData.entries());
-    console.log(profileData);
-    editProfile(profileData);
+
+    requests.editProfile(profileData);
   });
 }

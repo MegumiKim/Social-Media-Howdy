@@ -1,7 +1,9 @@
-import * as postsMethod from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../../templates/errorMessage.mjs";
+import { forceLogIn } from "../utils/forceLogIn.mjs";
+import { saveToSessionStorage } from "../storage/save.mjs";
 
 const container = document.querySelector("#posts-container");
 
@@ -13,7 +15,9 @@ const postsURL = `${BASE_URL}/posts?_author=true`;
 export async function renderPosts() {
   try {
     if (container) {
-      const posts = await postsMethod.fetchPosts(postsURL);
+      forceLogIn();
+      const posts = await requests.fetchData(postsURL);
+      saveToSessionStorage("cached-posts", posts);
 
       posts.forEach((post) => {
         const card = new Class.Thumbnail(

@@ -40,14 +40,6 @@
               <a class="nav-link" id="logout-btn">Log out</a>
             </li>
           </ul>
-          <form role="search">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
         </div>
       </div>
     </nav>
@@ -70,6 +62,15 @@
         </div>
         <section id="contacts-list" class="col-12 col-md-5">
           <h3 class="py-1">All Users</h3>
+          <form class="mb-3" role="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search User"
+              aria-label="Search"
+              id="search-user"
+            />
+          </form>
           <div class="list-group w-auto" id="profiles-container"></div>
         </section>
       </main>

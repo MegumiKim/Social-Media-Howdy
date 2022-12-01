@@ -8,7 +8,7 @@ export async function postComment(postData) {
 
   const postCommentURL = `${BASE_URL}/posts/${id}/comment`;
   console.log(postCommentURL);
-  // const comment = await postsMethod.fetchPosts(postCommentURL);
+  // const comment = await requests.fetchPosts(postCommentURL);
 
   try {
     const token = load("accessToken");

@@ -10,3 +10,4 @@ export * from "./searchPost.mjs";
 export * from "./oldToNew.mjs";
 export * from "./newToOld.mjs";
 export * from "./logOut.mjs";
+export * from "./searchUser.mjs";

@@ -1,8 +1,9 @@
-import * as postsMethod from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../../templates/errorMessage.mjs";
-
+import { forceLogIn } from "../utils/forceLogIn.mjs";
+import { saveToSessionStorage } from "../storage/save.mjs";
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
@@ -10,7 +11,9 @@ const profileURL = `${BASE_URL}/profiles`;
 export async function renderProfiles() {
   try {
     if (container) {
-      const profiles = await postsMethod.fetchPosts(profileURL);
+      forceLogIn();
+      const profiles = await requests.fetchData(profileURL);
+      saveToSessionStorage("cached-profiles", profiles);
 
       profiles.forEach(({ name, email, banner, avatar }) => {
         const card = new Class.UserThumbnail(name, email, banner, avatar);

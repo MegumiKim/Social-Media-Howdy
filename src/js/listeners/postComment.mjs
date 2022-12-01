@@ -1,4 +1,4 @@
-import { postComment } from "../api/posts/index.mjs";
+import * as requests from "../api/apiRequests/index.mjs";
 
 /**
  * Listen to submit event on comment form and
@@ -13,7 +13,7 @@ export async function postCommentListener() {
 
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
-      postComment(post);
+      requests.postComment(post);
       form.reset();
     });
   }
