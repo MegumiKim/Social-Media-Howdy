@@ -7,7 +7,7 @@ import { saveToSessionStorage } from "../storage/save.mjs";
 
 const container = document.querySelector("#posts-container");
 
-const postsURL = `${BASE_URL}/posts?_author=true`;
+const postsURL = `${BASE_URL}/posts?_author=true&_count=true`;
 
 /**
  * Get data from API and create post thumbnail Class.
@@ -18,7 +18,7 @@ export async function renderPosts() {
       forceLogIn();
       const posts = await requests.fetchData(postsURL);
       saveToSessionStorage("cached-posts", posts);
-
+      console.log(posts);
       posts.forEach((post) => {
         const card = new Class.Thumbnail(
           post.title,
@@ -26,7 +26,8 @@ export async function renderPosts() {
           post.media,
           post.created,
           post.id,
-          post.author.name
+          post.author.name,
+          post._count
         );
         card.render(container);
       });

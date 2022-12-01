@@ -8,7 +8,17 @@ export class SinglePost {
    * Create a post.
    * @param {boolean} myPost This indicates the post in question is whether posted by the user or not by boolean expression.
    */
-  constructor(title, body, media = "", date, id, author, comments, myPost) {
+  constructor(
+    title,
+    body,
+    media = "",
+    date,
+    id,
+    author,
+    comments,
+    count,
+    myPost
+  ) {
     this.title = title;
     this.body = body;
     this.media = media;
@@ -16,6 +26,8 @@ export class SinglePost {
     this.id = id;
     this.author = author;
     this.comments = comments;
+    this.reactionsCount = count.reactions;
+    this.commentsCount = count.comments;
     this.myPost = myPost;
   }
 
@@ -59,7 +71,10 @@ export class SinglePost {
     const element = doc.querySelector("#singlePost");
     const editBtn = doc.querySelector("#editBtn");
     const deleteBtn = doc.querySelector("#deleteBtn");
+    const likeBtn = doc.querySelector("#likeBtn");
+    likeBtn.innerHTML = `Like ${this.reactionsCount}`;
     parent.append(element);
+    this.reaction;
 
     if (this.comments.length > 0) {
       const commentDoc = parser.parseFromString(this.comment, "text/html");

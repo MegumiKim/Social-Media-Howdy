@@ -12,10 +12,14 @@ export function postThumbnail(postData) {
             </img>
           </div>
           <div class="card-body">
-            <h5 class="card-text">${postData.title}</h5>
+            <h5 class="card-text" >${postData.title}</h5>
             <div class="justify-content-between align-items-center">       
-              <small class="text-muted">${postData.date}</small>
+              <p class="text-muted" style="text-align:right">${postData.date}</p>
               <p>By ${postData.author}</p>
+            </div>
+            <div class="d-flex align-items-center text-muted">       
+              <p class=me-3>Likes: ${postData.reactionsCount}</p>
+              <p>Comments:  ${postData.commentsCount}</p>
             </div>
           </div>
         </div>

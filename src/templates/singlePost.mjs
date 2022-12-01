@@ -11,7 +11,7 @@ export function singlePost(postData) {
         <p>${postData.body}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
+            <button id="likeBtn" type="button" class="btn btn-sm btn-outline-secondary">Like</button>
             <!-- Button trigger modal -->
             <button id="editBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-edit-form">
             Edit Post

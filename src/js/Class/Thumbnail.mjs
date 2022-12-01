@@ -6,7 +6,7 @@ export class Thumbnail {
    * Create a post thumbnail.
    * Date will be formatted without time.
    */
-  constructor(title, body, media, date, id, author) {
+  constructor(title, body, media, date, id, author, count) {
     const DateFormatOptions = {
       year: "numeric",
       month: "short",
@@ -18,6 +18,8 @@ export class Thumbnail {
     this.date = new Date(date).toLocaleDateString("en-GB", DateFormatOptions);
     this.id = id;
     this.author = author;
+    this.reactionsCount = count.reactions;
+    this.commentsCount = count.comments;
   }
   /** Get HTML template for a post thumbnail*/
   get template() {

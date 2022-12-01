@@ -17,10 +17,12 @@ export async function renderSinglePost() {
       const url = new URL(location.href);
       const id = url.searchParams.get("id");
 
-      const singlePostURL = `${constants.BASE_URL}/posts/${id}?_author=true&_comments=true`;
+      const singlePostURL = `${constants.BASE_URL}/posts/${id}?_author=true&_comments=true&_count=true`;
       const post = await requests.fetchData(singlePostURL);
       const author = post.author.name;
       const itsMe = checkIfItsMe(author);
+
+      console.log(post._count);
 
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${post.title}`;
@@ -36,6 +38,7 @@ export async function renderSinglePost() {
         post.id,
         post.author.name,
         post.comments,
+        post._count,
         itsMe
       );
 
