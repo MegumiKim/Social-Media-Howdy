@@ -11,7 +11,6 @@ export class UserThumbnail {
   constructor(name, email, avatar) {
     this.name = name;
     this.email = email;
-    // this.banner = banner;
     this.avatar = avatar;
   }
 

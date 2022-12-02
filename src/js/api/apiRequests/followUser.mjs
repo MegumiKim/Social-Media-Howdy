@@ -1,29 +1,34 @@
 import { load } from "../../storage/local.mjs";
+import { getParam } from "../../utils/getParam.mjs";
 import { BASE_URL } from "../constants.mjs";
-// import { authOption } from "../makeOptions.mjs";
 
 export async function followUser() {
-  const url = new URL(location.href);
-  const name = url.searchParams.get("name");
-
+  const name = getParam("name");
   const followURL = `${BASE_URL}/profiles/${name}/follow`;
-  // const comment = await requests.fetchPosts(postCommentURL);
 
   try {
-    const token = load("accessToken");
-    const options = {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    };
-    // const options = authOption("PUT");
+    const options = makeOptions();
     const response = await fetch(followURL, options);
 
-    console.log(response);
     const result = await response.json();
     console.log(result);
+
+    if (response.ok) {
+      alert(`Successfully followed ${name}`);
+    } else {
+      alert(result.errors[0].message);
+    }
   } catch (e) {
     console.log(e);
   }
+}
+
+function makeOptions() {
+  const token = load("accessToken");
+  return {
+    method: "PUT",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  };
 }

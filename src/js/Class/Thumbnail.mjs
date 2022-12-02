@@ -6,7 +6,7 @@ export class Thumbnail {
    * Create a post thumbnail.
    * Date will be formatted without time.
    */
-  constructor(title, body, media, date, id, author, count) {
+  constructor(title, body, media, tags, date, id, author, count) {
     const DateFormatOptions = {
       year: "numeric",
       month: "short",
@@ -15,6 +15,7 @@ export class Thumbnail {
     this.title = title;
     this.body = body;
     this.media = media;
+    this.tags = tags;
     this.date = new Date(date).toLocaleDateString("en-GB", DateFormatOptions);
     this.id = id;
     this.author = author;
@@ -25,6 +26,11 @@ export class Thumbnail {
   get template() {
     return postThumbnail(this);
   }
+
+  // get tags() {
+  //   const tag = map(this.tags);
+  //   console.log(tag);
+  // }
 
   /**render the thumbnail template in container */
   render(parent = document.body) {
