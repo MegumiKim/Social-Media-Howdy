@@ -61,17 +61,87 @@
           </section>
         </div>
         <section id="contacts-list" class="col-12 col-md-5">
-          <h3 class="py-1">All Users</h3>
-          <form class="mb-3" role="search">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search User"
-              aria-label="Search"
-              id="search-user"
-            />
-          </form>
-          <div class="list-group w-auto" id="profiles-container"></div>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button
+                class="nav-link active"
+                id="nav-home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#all-users"
+                type="button"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                All Users
+              </button>
+              <button
+                class="nav-link"
+                id="nav-profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#followings"
+                type="button"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                Following
+              </button>
+              <button
+                class="nav-link"
+                id="nav-contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#followers"
+                type="button"
+                role="tab"
+                aria-controls="nav-contact"
+                aria-selected="false"
+              >
+                Followers
+              </button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="all-users"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="0"
+            >
+              <h3 class="py-1">All Users</h3>
+              <form class="mb-3" role="search">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Search User"
+                  aria-label="Search"
+                  id="search-user"
+                />
+              </form>
+              <div class="list-group w-auto" id="profiles-container"></div>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="followings"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="0"
+            >
+              <h3 class="py-1">Following</h3>
+              <div class="list-group w-auto" id=""></div>
+            </div>
+            <div
+              class="tab-pane fade show active"
+              id="followers"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="0"
+            >
+              <h3 class="py-1">Followers</h3>
+              <div class="list-group w-auto" id=""></div>
+            </div>
+          </div>
         </section>
       </main>
       <footer class="my-5 pt-5 text-muted text-center text-small">

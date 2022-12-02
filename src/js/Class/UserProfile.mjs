@@ -1,6 +1,6 @@
 import { userProfileTemplate } from "../templates/index.mjs";
-import { editProfileListener } from "../listeners/index.mjs";
-import { renderPosts } from "../renders/renderPosts.mjs";
+import * as listeners from "../listeners/index.mjs";
+// import { renderPosts } from "../renders/renderPosts.mjs";
 
 /** Class representing a single user profile */
 export class UserProfile {
@@ -26,14 +26,23 @@ export class UserProfile {
     return template;
   }
 
-  /** render user specific posts*/
-  get myPosts() {
-    const posts = renderPosts();
-  }
+  // /** render user specific posts*/
+  // get myPosts() {
+  //   const posts = renderPosts();
+  // }
 
   /** listen to form submission event (update profile)*/
   update() {
-    editProfileListener();
+    listeners.editProfileListener();
+  }
+
+  /** listen to a click event and follow user*/
+  follow() {
+    listeners.followListener();
+  }
+  /** listen to a click event and follow user*/
+  unfollow() {
+    listeners.unfollowListener();
   }
 
   /** render the post in container.

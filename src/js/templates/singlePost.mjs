@@ -7,11 +7,11 @@ export function singlePost(postData) {
       </div>
       <div class="card-body">
         <h3 class="card-text">${postData.title}</h3>
-        <p>By ${postData.author}</p>
+        <a href="../../../profile/?name=${postData.author}">By ${postData.author}</a>
         <p>${postData.body}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <button id="likeBtn" type="button" class="btn btn-sm btn-outline-secondary">Like</button>
+            <button id="likeBtn" type="button" class="btn btn-sm btn-outline-secondary" aria-label="like button likes count ${postData.reactionsCount}">🧡 ${postData.reactionsCount}</button>
             <!-- Button trigger modal -->
             <button id="editBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-edit-form">
             Edit Post

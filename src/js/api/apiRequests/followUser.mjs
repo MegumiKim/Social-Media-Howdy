@@ -1,13 +1,12 @@
 import { load } from "../../storage/local.mjs";
 import { BASE_URL } from "../constants.mjs";
-
 // import { authOption } from "../makeOptions.mjs";
 
-export async function likePost() {
+export async function followUser() {
   const url = new URL(location.href);
-  const id = url.searchParams.get("id");
+  const name = url.searchParams.get("name");
 
-  const reactURL = `${BASE_URL}/posts/${id}/react/🧡`;
+  const followURL = `${BASE_URL}/profiles/${name}/follow`;
   // const comment = await requests.fetchPosts(postCommentURL);
 
   try {
@@ -18,9 +17,8 @@ export async function likePost() {
         authorization: `Bearer ${token}`,
       },
     };
-
     // const options = authOption("PUT");
-    const response = await fetch(reactURL, options);
+    const response = await fetch(followURL, options);
 
     console.log(response);
     const result = await response.json();

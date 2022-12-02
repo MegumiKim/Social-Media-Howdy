@@ -46,6 +46,7 @@ export async function renderSinglePost() {
       singlePost.postComment();
       singlePost.edit();
       singlePost.delete();
+      singlePost.likePost();
     }
   } catch (error) {
     errorMessage(container);

@@ -28,6 +28,8 @@ export async function renderSingleProfile() {
 
       singleProfile.render(container);
       singleProfile.update();
+      singleProfile.follow();
+      singleProfile.unfollow();
     }
   } catch (error) {
     errorMessage(container);

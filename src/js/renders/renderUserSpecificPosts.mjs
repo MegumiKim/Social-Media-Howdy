@@ -13,13 +13,13 @@ export async function renderUserSpecificPosts() {
       const name = url.searchParams.get("name");
       const itsMe = checkIfItsMe(name);
 
-      const postsByProfileURL = `${BASE_URL}/profiles/${name}/posts?_author=true`;
+      const postsByProfileURL = `${BASE_URL}/profiles/${name}/posts?_author=true&_count=true`;
       const posts = await requests.fetchData(postsByProfileURL);
 
       if (!posts.length) {
         container.innerHTML = `<h3>No Posts by ${name} :-(</3>`;
       } else {
-        posts.forEach(({ title, body, media, created, id, author }) => {
+        posts.forEach(({ title, body, media, created, id, author, _count }) => {
           if (!media) {
             media = `${blankPostImgURL}`;
           }
@@ -30,7 +30,8 @@ export async function renderUserSpecificPosts() {
             created,
             id,
             author.name,
-            itsMe
+            _count
+            // itsMe
           );
           card.render(container);
         });

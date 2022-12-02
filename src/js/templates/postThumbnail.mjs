@@ -18,7 +18,7 @@ export function postThumbnail(postData) {
               <p>By ${postData.author}</p>
             </div>
             <div class="d-flex align-items-center text-muted">       
-              <p class=me-3>Likes: ${postData.reactionsCount}</p>
+              <p class="me-3" aria-label="likes count ${postData.reactionsCount}">🧡 ${postData.reactionsCount}</p>
               <p>Comments:  ${postData.commentsCount}</p>
             </div>
           </div>

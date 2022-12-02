@@ -56,6 +56,9 @@ export class SinglePost {
     listeners.deletePostListener();
   }
 
+  likePost() {
+    listeners.likePostListener();
+  }
   // reload() {
   //   container.innerHTML = "";
   // }
@@ -71,10 +74,9 @@ export class SinglePost {
     const element = doc.querySelector("#singlePost");
     const editBtn = doc.querySelector("#editBtn");
     const deleteBtn = doc.querySelector("#deleteBtn");
-    const likeBtn = doc.querySelector("#likeBtn");
-    likeBtn.innerHTML = `Like ${this.reactionsCount}`;
+    // const likeBtn = doc.querySelector("#likeBtn");
+
     parent.append(element);
-    this.reaction;
 
     if (this.comments.length > 0) {
       const commentDoc = parser.parseFromString(this.comment, "text/html");
