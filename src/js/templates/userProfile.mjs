@@ -1,4 +1,4 @@
-import { blankPostImgURL, blankUserImgURL } from "../js/api/constants.mjs";
+import { blankPostImgURL, blankUserImgURL } from "../api/constants.mjs";
 
 export function userProfileTemplate(profile) {
   return `

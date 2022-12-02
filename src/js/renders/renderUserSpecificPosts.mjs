@@ -1,9 +1,8 @@
 import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
-// import userProfileClass from "../Class/userProfileClass.mjs";
 import { BASE_URL, blankPostImgURL } from "../api/constants.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
-import { errorMessage } from "../../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/errorMessage.mjs";
 
 const container = document.querySelector("#user-specific-posts-container");
 

@@ -1,5 +1,5 @@
-import { userProfileTemplate } from "../../templates/index.mjs";
-import { editProfileListener } from "../listeners/profiles/editProfile.mjs";
+import { userProfileTemplate } from "../templates/index.mjs";
+import { editProfileListener } from "../listeners/index.mjs";
 import { renderPosts } from "../renders/renderPosts.mjs";
 
 /** Class representing a single user profile */

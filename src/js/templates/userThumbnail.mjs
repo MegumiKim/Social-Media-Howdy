@@ -1,4 +1,4 @@
-import { blankUserImgURL } from "../js/api/constants.mjs";
+import { blankUserImgURL } from "../api/constants.mjs";
 
 export function userThumbnail(profile) {
   return `

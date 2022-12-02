@@ -1,6 +1,6 @@
 import * as sorts from "../../filters/filters/index.mjs";
-import { loadFromSessionStorage } from "../../storage/load.mjs";
 import { Thumbnail } from "../../Class/Thumbnail.mjs";
+import { load } from "../../storage/local.mjs";
 const container = document.querySelector("#posts-container");
 
 export function oldToNewListener() {
@@ -10,7 +10,7 @@ export function oldToNewListener() {
     sortBtn.addEventListener("click", (event) => {
       event.preventDefault();
 
-      let posts = loadFromSessionStorage("cached-posts");
+      let posts = load("cached-posts");
       posts = sorts.oldToNew(posts);
 
       container.innerHTML = "";

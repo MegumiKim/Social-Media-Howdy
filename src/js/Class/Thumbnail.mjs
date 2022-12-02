@@ -1,4 +1,4 @@
-import { postThumbnail } from "../../templates/index.mjs";
+import { postThumbnail } from "../templates/index.mjs";
 
 /**Class representing a post thumbnail (card) */
 export class Thumbnail {

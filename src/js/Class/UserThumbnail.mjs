@@ -1,4 +1,4 @@
-import { userThumbnail } from "../../templates/index.mjs";
+import { userThumbnail } from "../templates/index.mjs";
 
 /**Class representing a user profile thumbnail */
 export class UserThumbnail {

@@ -1,4 +1,4 @@
-import { load } from "../storage/index.mjs";
+import { load } from "../storage/local.mjs";
 
 export function makeOptions(method, body, auth = "") {
   const options = {

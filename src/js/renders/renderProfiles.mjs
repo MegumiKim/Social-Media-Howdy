@@ -1,9 +1,9 @@
 import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-import { errorMessage } from "../../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
-import { saveToSessionStorage } from "../storage/save.mjs";
+import { save } from "../storage/local.mjs";
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
@@ -13,7 +13,7 @@ export async function renderProfiles() {
     if (container) {
       forceLogIn();
       const profiles = await requests.fetchData(profileURL);
-      saveToSessionStorage("cached-profiles", profiles);
+      save("cached-profiles", profiles);
 
       profiles.forEach(({ name, email, banner, avatar }) => {
         const card = new Class.UserThumbnail(name, email, banner, avatar);

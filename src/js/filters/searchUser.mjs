@@ -1,13 +1,13 @@
-import { errorMessage } from "../../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/errorMessage.mjs";
 import { UserThumbnail } from "../Class/UserThumbnail.mjs";
-import { loadFromSessionStorage } from "../storage/load.mjs";
+import { load } from "../storage/session.mjs";
 import * as filters from "./filters/index.mjs";
 
 const container = document.querySelector("#profiles-container");
 
 export async function searchUser(searchValue) {
   try {
-    let profiles = loadFromSessionStorage("cached-profiles");
+    let profiles = load("cached-profiles");
 
     container.innerHTML = "";
     profiles = profiles.filter((profile) =>

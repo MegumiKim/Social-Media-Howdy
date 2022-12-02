@@ -1,9 +1,9 @@
 import * as requests from "../api/apiRequests/index.mjs";
 import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-import { errorMessage } from "../../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
-import { saveToSessionStorage } from "../storage/save.mjs";
+import { save } from "../storage/session.mjs";
 
 const container = document.querySelector("#posts-container");
 
@@ -17,7 +17,7 @@ export async function renderPosts() {
     if (container) {
       forceLogIn();
       const posts = await requests.fetchData(postsURL);
-      saveToSessionStorage("cached-posts", posts);
+      save("cached-posts", posts);
       console.log(posts);
       posts.forEach((post) => {
         const card = new Class.Thumbnail(

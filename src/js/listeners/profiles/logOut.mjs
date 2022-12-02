@@ -1,4 +1,4 @@
-import { remove } from "../../storage/remove.mjs";
+import { remove } from "../../storage/local.mjs";
 
 export function logout() {
   const logoutBtn = document.querySelector("#logout-btn");

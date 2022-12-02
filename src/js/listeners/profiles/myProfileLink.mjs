@@ -1,4 +1,4 @@
-import { load } from "../../storage/load.mjs";
+import { load } from "../../storage/local.mjs";
 
 /**
  * Add user name in query parameter

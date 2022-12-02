@@ -1,13 +1,13 @@
-import { errorMessage } from "../../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/index.mjs";
 import { Thumbnail } from "../Class/Thumbnail.mjs";
-import { loadFromSessionStorage } from "../storage/load.mjs";
+import { load } from "../storage/session.mjs";
 import * as filters from "./filters/index.mjs";
 
 const container = document.querySelector("#posts-container");
 
 export async function searchPost(searchValue) {
   try {
-    let posts = loadFromSessionStorage("cache");
+    let posts = load("cached-posts");
     container.innerHTML = "";
     posts = posts.filter((post) => filters.postsFilter(post, searchValue));
 

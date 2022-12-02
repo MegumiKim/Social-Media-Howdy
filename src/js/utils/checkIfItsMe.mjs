@@ -1,4 +1,4 @@
-import { load } from "../storage/load.mjs";
+import { load } from "../storage/local.mjs";
 
 /** Check if the name is same as the username
  * saved in the local storage

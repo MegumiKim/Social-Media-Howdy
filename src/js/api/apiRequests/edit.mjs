@@ -1,6 +1,6 @@
 import { BASE_URL } from "../constants.mjs";
 import { makeOptions } from "../makeOptions.mjs";
-import { load } from "../../storage/load.mjs";
+import { load } from "../../storage/local.mjs";
 
 export async function editPost(postData) {
   const url = new URL(location.href);

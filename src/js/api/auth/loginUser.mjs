@@ -1,5 +1,5 @@
 import { BASE_URL } from "../constants.mjs";
-import * as storage from "../../storage/index.mjs";
+import * as storages from "../../storage/index.mjs";
 
 const registerURL = `${BASE_URL}/auth/login`;
 const userAlert = document.querySelector("#user-alert");
@@ -22,8 +22,8 @@ export async function loginUser(options) {
     const { accessToken, ...otherDetails } = json;
 
     if (accessToken) {
-      storage.save("accessToken", accessToken);
-      storage.save("otherDetails", otherDetails);
+      storages.locals.save("accessToken", accessToken);
+      storages.sessions.save("otherDetails", otherDetails);
       window.location.replace("../../../../posts/index.html");
     } else {
       const { errors } = json;

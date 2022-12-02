@@ -1,4 +1,4 @@
-import * as templates from "../../templates/index.mjs";
+import * as templates from "../templates/index.mjs";
 import * as listeners from "../listeners/index.mjs";
 // const container = document.querySelector("#post-container");
 

@@ -1,4 +1,4 @@
-import { load } from "../storage/load.mjs";
+import { load } from "../storage/local.mjs";
 
 export function forceLogIn() {
   if (!load("accessToken")) {

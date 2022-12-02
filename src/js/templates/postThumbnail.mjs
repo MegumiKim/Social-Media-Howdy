@@ -1,4 +1,4 @@
-import { blankPostImgURL } from "../js/api/constants.mjs";
+import { blankPostImgURL } from "../api/constants.mjs";
 
 export function postThumbnail(postData) {
   return `
