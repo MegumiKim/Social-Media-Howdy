@@ -6,12 +6,12 @@ export function postThumbnail(postData) {
     <div class="card shadow-sm thumbnail">
       <a href="../post/?id=${postData.id}">
         <div class="d-flex">
-          <div style="overflow:hidden; width:300px; height:300px;" width="300px" height="300px">
+          <div style="overflow:hidden; width:300px; height:300px;">
             <img src="${postData.media}"  alt="${postData.title}"
-            onerror="this.onerror=null;this.src='${blankPostImgURL}'" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
+            onerror="this.onerror=null;this.src='${blankPostImgURL}'" width="100%" class="h-100 w-100" >
             </img>
           </div>
-          <div class="card-body">
+          <div class="card-body" >
             <h5 class="card-text" >${postData.title}</h5>
             <div class="justify-content-between align-items-center">       
               <p class="text-muted" style="text-align:right">${postData.date}</p>

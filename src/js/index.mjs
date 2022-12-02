@@ -14,5 +14,7 @@ listeners.logout();
 renders.renderPosts();
 renders.renderSinglePost();
 renders.renderProfiles();
+renders.renderFollowers();
+renders.renderFollowing();
 renders.renderSingleProfile();
 renders.renderUserSpecificPosts();

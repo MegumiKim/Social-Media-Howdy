@@ -1,6 +1,6 @@
 import * as sorts from "../../filters/filters/index.mjs";
 import { Thumbnail } from "../../Class/Thumbnail.mjs";
-import { load } from "../../storage/local.mjs";
+import { load } from "../../storage/session.mjs";
 const container = document.querySelector("#posts-container");
 
 export function oldToNewListener() {
@@ -21,7 +21,8 @@ export function oldToNewListener() {
           post.media,
           post.created,
           post.id,
-          post.author.name
+          post.author.name,
+          post._count
         );
         card.render(container);
       });

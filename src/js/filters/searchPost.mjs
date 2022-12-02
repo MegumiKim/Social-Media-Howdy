@@ -5,11 +5,13 @@ import * as filters from "./filters/index.mjs";
 
 const container = document.querySelector("#posts-container");
 
-export async function searchPost(searchValue) {
+export function searchPost(searchValue) {
   try {
     let posts = load("cached-posts");
+
     container.innerHTML = "";
     posts = posts.filter((post) => filters.postsFilter(post, searchValue));
+    console.log(posts);
 
     if (posts.length) {
       posts.forEach((post) => {
@@ -19,7 +21,8 @@ export async function searchPost(searchValue) {
           post.media,
           post.created,
           post.id,
-          post.author.name
+          post.author.name,
+          post._count
         );
         card.render(container);
       });

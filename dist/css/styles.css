@@ -10999,4 +10999,17 @@ textarea.form-control-lg {
   transform: scale(1.03);
 }
 
+.card-text {
+  word-wrap: break-word;
+}
+
+.card-body {
+  flex: 1;
+}
+
+img {
+  object-position: center center;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=styles.css.map */

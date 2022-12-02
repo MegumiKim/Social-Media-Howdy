@@ -12,12 +12,13 @@ export class UserProfile {
    * @param {string} avatar URL for avatar image
    * @param {boolean} myProfile Indicates the profile in question is whether the logged in user or not.
    */
-  constructor(name, email, banner, avatar, myProfile) {
+  constructor(name, email, banner, avatar, myProfile, counts) {
     this.name = name;
     this.email = email;
     this.banner = banner;
     this.avatar = avatar;
     this.myProfile = myProfile;
+    this.counts = counts;
   }
 
   /** Get HTML template for a single profile*/
@@ -54,8 +55,12 @@ export class UserProfile {
     const doc = parser.parseFromString(this.template, "text/html");
     const element = doc.querySelector(".card");
     const editProfileBtn = doc.querySelector("#editProfileBtn");
+    const followBtn = doc.querySelector("#follow-btn");
+    const unfollowBtn = doc.querySelector("#unfollow-btn");
     if (this.myProfile) {
       editProfileBtn.style.display = "block";
+      followBtn.style.display = "none";
+      unfollowBtn.style.display = "none";
     }
 
     parent.append(element);

@@ -8,10 +8,10 @@ export class UserThumbnail {
    * @param {string} banner URL for banner image
    * @param {string} avatar URL for avatar image
    */
-  constructor(name, email, banner, avatar) {
+  constructor(name, email, avatar) {
     this.name = name;
     this.email = email;
-    this.banner = banner;
+    // this.banner = banner;
     this.avatar = avatar;
   }
 

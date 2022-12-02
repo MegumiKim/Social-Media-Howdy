@@ -12,10 +12,7 @@ export function userProfileTemplate(profile) {
     </div>
 
 
-    <!-- Button trigger modal -->
-    <button id="editProfileBtn" style="display:none" type="button" class="btn btn-secondary m-auto" data-bs-toggle="modal" data-bs-target="#edit-profile-modal">
-      Change Profile Images
-    </button>
+
     
 
 
@@ -23,10 +20,15 @@ export function userProfileTemplate(profile) {
     <div class="card-body" style="text-align:center">
       <h2>${profile.name}</h2>
       <p>${profile.email}</p>
+      <div>${profile.counts.followers} followers | ${profile.counts.following} following | ${profile.counts.posts} posts </div>
       <button id="follow-btn" class="btn btn-primary">Follow ${profile.name}</button>
       <button id="unfollow-btn" class="btn btn-secondary">Unfollow ${profile.name}</button>
     </div>
 
+    <!-- Button trigger modal -->
+    <button id="editProfileBtn" style="display:none" type="button" class="btn btn-secondary m-auto" data-bs-toggle="modal" data-bs-target="#edit-profile-modal">
+      Change Profile Images
+    </button>
   </div>
 
 
@@ -34,7 +36,7 @@ export function userProfileTemplate(profile) {
   <!-- Edit Profile modal -->
   <div
   class="modal fade"
-  id="exampleModal"
+  id="edit-profile-modal"
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
