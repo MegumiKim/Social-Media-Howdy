@@ -1,7 +1,8 @@
 import { makeOptions } from "../makeOptions.mjs";
 import { load } from "../../storage/local.mjs";
+import { renderSinglePost } from "../../renders/renderSinglePost.mjs";
 
-export async function edit(postData, url) {
+export async function editPost(postData, url) {
   try {
     const token = load("accessToken");
     const auth = `Bearer ${token}`;
@@ -11,6 +12,7 @@ export async function edit(postData, url) {
 
     const result = await response.json();
     console.log(result);
+    renderSinglePost();
   } catch (e) {
     console.log(e);
   }

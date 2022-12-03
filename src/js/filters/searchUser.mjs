@@ -19,7 +19,6 @@ export async function searchUser(searchValue) {
         const card = new UserThumbnail(
           profile.name,
           profile.email,
-          profile.banner,
           profile.avatar
         );
         card.render(container);

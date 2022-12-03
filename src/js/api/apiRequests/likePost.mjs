@@ -1,3 +1,4 @@
+import { renderSinglePost } from "../../renders/renderSinglePost.mjs";
 import { load } from "../../storage/local.mjs";
 import { BASE_URL } from "../constants.mjs";
 
@@ -25,6 +26,7 @@ export async function likePost() {
     console.log(response);
     const result = await response.json();
     console.log(result);
+    renderSinglePost();
   } catch (e) {
     console.log(e);
   }

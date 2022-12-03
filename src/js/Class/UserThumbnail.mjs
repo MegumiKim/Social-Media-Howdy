@@ -5,7 +5,6 @@ export class UserThumbnail {
   /**
    * @param {string} name user name
    * @param {string} email registered email
-   * @param {string} banner URL for banner image
    * @param {string} avatar URL for avatar image
    */
   constructor(name, email, avatar) {

@@ -1,4 +1,5 @@
 import * as requests from "../../api/apiRequests/index.mjs";
+import { renderPosts } from "../../renders/renderPosts.mjs";
 
 /**
  * Listen to submit event on create post form and

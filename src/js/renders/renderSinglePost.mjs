@@ -4,6 +4,7 @@ import * as constants from "../api/constants.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
+import { getParam } from "../utils/getParam.mjs";
 
 const container = document.querySelector("#post-container");
 
@@ -14,15 +15,13 @@ export async function renderSinglePost() {
   try {
     if (container) {
       forceLogIn();
-      const url = new URL(location.href);
-      const id = url.searchParams.get("id");
+      container.innerHTML = "";
+      const id = getParam("id");
 
       const singlePostURL = `${constants.BASE_URL}/posts/${id}?_author=true&_comments=true&_count=true`;
       const post = await requests.fetchData(singlePostURL);
       const author = post.author.name;
       const itsMe = checkIfItsMe(author);
-
-      console.log(post._count);
 
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${post.title}`;

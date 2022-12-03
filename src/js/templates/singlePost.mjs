@@ -78,6 +78,10 @@ export function singlePost(postData) {
                       <textarea type="text" class="form-control" name="body" max-length="150"></textarea>
                     </div>
                     <div class="form-group mb-3">
+                    <label for="">Tag</label>
+                    <input type="text" class="form-control" name="tags" >
+                    </div>
+                    <div class="form-group mb-3">
                       <label for="">Media URL (if not provided, random image will be applied)</label>
                       <input type="url"  class="form-control" name="media" >
                     </div>

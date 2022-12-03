@@ -16,6 +16,7 @@ export async function renderPosts() {
   try {
     if (container) {
       forceLogIn();
+      container.innerHTML = "";
       const posts = await requests.fetchData(postsURL);
       save("cached-posts", posts);
 

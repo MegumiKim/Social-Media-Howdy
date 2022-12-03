@@ -31,6 +31,7 @@ export async function renderSingleProfile() {
         profile._count
       );
 
+      container.innerHTML = "";
       singleProfile.render(container);
       singleProfile.update();
       singleProfile.follow();

@@ -1,21 +1,13 @@
 import { blankPostImgURL, blankUserImgURL } from "../api/constants.mjs";
 
 export function userProfileTemplate(profile) {
-  return `
-  <div class="card m-auto mb-4 p-4" >
-
-<div>
+  return `<div class="card m-auto mb-4 p-4" >
+  <div>
 
     <div class="d-flex flex-wrap g-3 mb-3">
       <img class=" m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';" width="400" height="200" alt="banner for ${profile.name}" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
       <img class="rounded-circle m-auto" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200" class="h-100 w-100" style="object-position: center center; object-fit: cover">
     </div>
-
-
-
-    
-
-
 
     <div class="card-body" style="text-align:center">
       <h2>${profile.name}</h2>
@@ -30,8 +22,6 @@ export function userProfileTemplate(profile) {
       Change Profile Images
     </button>
   </div>
-
-
 
   <!-- Edit Profile modal -->
   <div
@@ -71,8 +61,7 @@ export function userProfileTemplate(profile) {
       </div>
     </div>
   </div>
-</div>;
-
 </div>
-`;
+
+</div>`;
 }

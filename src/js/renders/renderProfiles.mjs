@@ -3,7 +3,7 @@ import * as Class from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
-import { save } from "../storage/local.mjs";
+import { save } from "../storage/session.mjs";
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
@@ -15,8 +15,8 @@ export async function renderProfiles() {
       const profiles = await requests.fetchData(profileURL);
       save("cached-profiles", profiles);
 
-      profiles.forEach(({ name, email, banner, avatar }) => {
-        const card = new Class.UserThumbnail(name, email, banner, avatar);
+      profiles.forEach(({ name, email, avatar }) => {
+        const card = new Class.UserThumbnail(name, email, avatar);
 
         card.render(container);
       });

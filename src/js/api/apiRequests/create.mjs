@@ -1,6 +1,7 @@
 import { BASE_URL } from "../constants.mjs";
 import { makeOptions } from "../makeOptions.mjs";
 import { load } from "../../storage/local.mjs";
+import { renderPosts } from "../../renders/renderPosts.mjs";
 const createPostURL = `${BASE_URL}/posts`;
 
 export async function createPost(postData) {
@@ -12,6 +13,7 @@ export async function createPost(postData) {
 
     const result = await response.json();
     console.log(result);
+    renderPosts();
   } catch (e) {
     console.log(e);
   }
