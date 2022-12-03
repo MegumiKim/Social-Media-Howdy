@@ -7,9 +7,8 @@ export async function followUser() {
   const followURL = `${BASE_URL}/profiles/${name}/follow`;
 
   try {
-    const options = makeOptions();
+    const options = optionsWithBody();
     const response = await fetch(followURL, options);
-
     const result = await response.json();
     console.log(result);
 
@@ -23,7 +22,7 @@ export async function followUser() {
   }
 }
 
-function makeOptions() {
+function optionsWithBody() {
   const token = load("accessToken");
   return {
     method: "PUT",

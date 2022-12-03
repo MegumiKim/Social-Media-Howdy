@@ -9,7 +9,7 @@ export function login() {
 
       const formData = new FormData(form);
       const signUpDetails = Object.fromEntries(formData.entries());
-      const options = API.makeOptions(form.method, signUpDetails);
+      const options = API.optionsWithBody(form.method, signUpDetails);
       console.log(formData);
       API.loginUser(options);
     });

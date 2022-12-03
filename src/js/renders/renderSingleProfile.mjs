@@ -1,5 +1,5 @@
-import * as requests from "../api/apiRequests/index.mjs";
-import * as Class from "../Class/index.mjs";
+import { fetchData } from "../api/apiRequests/index.mjs";
+import { UserProfile } from "../Class/index.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
@@ -15,20 +15,21 @@ export async function renderSingleProfile() {
       const itsMe = checkIfItsMe(name);
 
       const singleProfileURL = `${BASE_URL}/profiles/${name}?_following=true&_followers=true`;
-      const profile = await requests.fetchData(singleProfileURL);
+      const profile = await fetchData(singleProfileURL);
       save("profileDetails", profile);
       const pageTitle = document.querySelector("title");
       pageTitle.innerHTML = `HOWDY | ${profile.name}`;
 
       console.log(profile);
 
-      const singleProfile = new Class.UserProfile(
+      const singleProfile = new UserProfile(
         profile.name,
         profile.email,
         profile.banner,
         profile.avatar,
         itsMe,
-        profile._count
+        profile._count,
+        profile.followers
       );
 
       container.innerHTML = "";

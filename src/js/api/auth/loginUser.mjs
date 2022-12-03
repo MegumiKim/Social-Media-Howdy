@@ -16,15 +16,13 @@ export async function loginUser(options) {
   userAlert.innerHTML = "";
   try {
     const response = await fetch(registerURL, options);
-    console.log(response);
-
     const json = await response.json();
     const { accessToken, ...otherDetails } = json;
 
     if (accessToken) {
       storages.locals.save("accessToken", accessToken);
       storages.sessions.save("otherDetails", otherDetails);
-      window.location.replace("../../../../posts/index.html");
+      window.location.replace("../../../../posts/");
     } else {
       const { errors } = json;
       errors.forEach(({ message }) => {

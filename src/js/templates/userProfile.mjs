@@ -12,15 +12,17 @@ export function userProfileTemplate(profile) {
     <div class="card-body" style="text-align:center">
       <h2>${profile.name}</h2>
       <p>${profile.email}</p>
-      <div>${profile.counts.followers} followers | ${profile.counts.following} following | ${profile.counts.posts} posts </div>
-      <button id="follow-btn" class="btn btn-primary">Follow ${profile.name}</button>
-      <button id="unfollow-btn" class="btn btn-secondary">Unfollow ${profile.name}</button>
-    </div>
+      <div class="mb-3">${profile.counts.followers} followers | ${profile.counts.following} following | ${profile.counts.posts} posts </div>
 
-    <!-- Button trigger modal -->
-    <button id="editProfileBtn" style="display:none" type="button" class="btn btn-secondary m-auto" data-bs-toggle="modal" data-bs-target="#edit-profile-modal">
-      Change Profile Images
-    </button>
+      <button id="follow-btn" class="btn btn-primary d-none " >Follow ${profile.name}</button>
+      <button id="unfollow-btn" class="btn btn-secondary d-none ">Unfollow ${profile.name}</button>
+      
+          <!-- Button trigger modal -->
+          <button id="editProfileBtn" type="button" class="btn btn-secondary m-auto d-none" data-bs-toggle="modal" data-bs-target="#edit-profile-modal">
+            Change Profile Images
+          </button>
+
+    </div>
   </div>
 
   <!-- Edit Profile modal -->

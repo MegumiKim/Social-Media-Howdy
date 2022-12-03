@@ -2,8 +2,8 @@ import { blankPostImgURL } from "../api/constants.mjs";
 
 export function postThumbnail(postData) {
   return `
-  <div class='col thumbnail' >
-    <div class="card shadow-sm ">
+  <div class='col thumbnail'>
+    <div class="card shadow-sm">
       <a href="../post/?id=${postData.id}">
         <div class="d-flex">
           <div style="overflow:hidden; width:300px; height:300px;">

@@ -1,6 +1,5 @@
 import { load } from "../../storage/local.mjs";
 import { BASE_URL } from "../constants.mjs";
-// import { authOption } from "../makeOptions.mjs";
 
 export async function unfollowUser() {
   const url = new URL(location.href);
@@ -8,7 +7,7 @@ export async function unfollowUser() {
   const followURL = `${BASE_URL}/profiles/${name}/unfollow`;
 
   try {
-    const options = makeOptions();
+    const options = optionsWithBody();
     const response = await fetch(followURL, options);
 
     const result = await response.json();
@@ -24,7 +23,7 @@ export async function unfollowUser() {
   }
 }
 
-function makeOptions() {
+function optionsWithBody() {
   const token = load("accessToken");
   return {
     method: "PUT",

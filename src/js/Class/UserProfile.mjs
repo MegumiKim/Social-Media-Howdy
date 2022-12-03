@@ -1,5 +1,6 @@
 import { userProfileTemplate } from "../templates/index.mjs";
 import * as listeners from "../listeners/index.mjs";
+import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 // import { renderPosts } from "../renders/renderPosts.mjs";
 
 /** Class representing a single user profile */
@@ -12,13 +13,14 @@ export class UserProfile {
    * @param {string} avatar URL for avatar image
    * @param {boolean} myProfile Indicates the profile in question is whether the logged in user or not.
    */
-  constructor(name, email, banner, avatar, myProfile, counts) {
+  constructor(name, email, banner, avatar, myProfile, counts, followers) {
     this.name = name;
     this.email = email;
     this.banner = banner;
     this.avatar = avatar;
     this.myProfile = myProfile;
     this.counts = counts;
+    this.followers = followers;
   }
 
   /** Get HTML template for a single profile*/
@@ -27,10 +29,14 @@ export class UserProfile {
     return template;
   }
 
-  // /** render user specific posts*/
-  // get myPosts() {
-  //   const posts = renderPosts();
-  // }
+  /** check if the logged-in user is following the profile */
+  get amIfollowing() {
+    if (this.followers.find((follower) => checkIfItsMe(follower.name))) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   /** listen to form submission event (update profile)*/
   update() {
@@ -56,13 +62,18 @@ export class UserProfile {
     const element = doc.querySelector(".card");
     const editProfileBtn = doc.querySelector("#editProfileBtn");
     const followBtn = doc.querySelector("#follow-btn");
-    const unfollowBtn = doc.querySelector("#unfollow-btn");
-    if (this.myProfile) {
-      editProfileBtn.style.display = "block";
-      followBtn.style.display = "none";
-      unfollowBtn.style.display = "none";
-    }
+    const unFollowBtn = doc.querySelector("#unfollow-btn");
 
+    if (!this.amIfollowing) {
+      followBtn.classList.remove("d-none");
+    } else {
+      unFollowBtn.classList.remove("d-none");
+    }
+    if (this.myProfile) {
+      editProfileBtn.classList.remove("d-none");
+      followBtn.classList.add("d-none");
+      unFollowBtn.classList.add("d-none");
+    }
     parent.append(element);
   }
 }

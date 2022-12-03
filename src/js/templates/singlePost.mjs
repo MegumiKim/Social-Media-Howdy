@@ -1,11 +1,11 @@
 export function singlePost(postData) {
   return `
-  <div class='col col-lg-6 m-auto' id='singlePost'>
+  <div class='col col-lg-8 m-auto' id='singlePost'>
     <div class="card shadow-sm">
-      <div class="card-img-top" style="overflow-y:clip; ">
-        <img src="${postData.media}" style="width: 100%;"></img>
+      <div class="card-img-top" style="overflow:hidden; max-height:500px;">
+        <img src="${postData.media}" class="h-100 w-100"></img>
       </div>
-      <div class="card-body">
+      <div class="card-body p-5">
         <h3 class="card-text">${postData.title}</h3>
         <a href="../../../profile/?name=${postData.author}">By ${postData.author}</a>
         <p>${postData.body}</p>

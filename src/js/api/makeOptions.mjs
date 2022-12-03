@@ -1,6 +1,6 @@
 import { load } from "../storage/local.mjs";
 
-export function makeOptions(method, body, auth = "") {
+export function optionsWithBody(method, body, auth = "") {
   const options = {
     method: method,
     headers: {
@@ -14,7 +14,7 @@ export function makeOptions(method, body, auth = "") {
   return options;
 }
 
-export function authOption(method = "GET") {
+export function optionsWithoutBody(method = "GET") {
   const token = load("accessToken");
 
   return {

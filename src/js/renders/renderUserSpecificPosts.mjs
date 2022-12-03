@@ -1,6 +1,6 @@
-import * as requests from "../api/apiRequests/index.mjs";
-import * as Class from "../Class/index.mjs";
-import { BASE_URL, blankPostImgURL } from "../api/constants.mjs";
+import { fetchData } from "../api/apiRequests/index.mjs";
+import { Thumbnail } from "../Class/index.mjs";
+import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
 import { getParam } from "../utils/getParam.mjs";
 
@@ -11,16 +11,13 @@ export async function renderUserSpecificPosts() {
     if (container) {
       const name = getParam("name");
       const postsByProfileURL = `${BASE_URL}/profiles/${name}/posts?_author=true&_count=true`;
-      const posts = await requests.fetchData(postsByProfileURL);
+      const posts = await fetchData(postsByProfileURL);
 
       if (!posts.length) {
-        container.innerHTML = `<h4>No Posts by ${name} :-(</3>`;
+        container.innerHTML = `<h4>No Posts by ${name} 💔</h4>`;
       } else {
         posts.forEach(({ title, media, tags, created, id, author, _count }) => {
-          if (!media) {
-            media = `${blankPostImgURL}`;
-          }
-          const card = new Class.Thumbnail(
+          const card = new Thumbnail(
             title,
             media,
             tags,
@@ -34,7 +31,7 @@ export async function renderUserSpecificPosts() {
       }
     }
   } catch (error) {
-    errorMessage(container);
+    errorMessage();
     console.log(error);
   }
 }

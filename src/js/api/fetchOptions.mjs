@@ -1,6 +1,6 @@
 import { load } from "../storage/local.mjs";
 
-export function makeOptions(method, body, auth = "") {
+export function optionsWithBody(method, body, auth = "") {
   const options = {
     method: method,
     headers: {

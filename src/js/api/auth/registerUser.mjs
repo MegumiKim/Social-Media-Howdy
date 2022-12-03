@@ -6,6 +6,7 @@ const userAlert = document.querySelector("#user-alert");
 
 /**
  * API call to register new user
+ * and login user automatically
  * @param {string} url
  * @param {*} userData
  * ```js
@@ -16,12 +17,11 @@ export async function registerUser(options) {
   userAlert.innerHTML = "";
   try {
     const response = await fetch(registerURL, options);
-
     const json = await response.json();
     const { id } = json;
 
     if (id) {
-      // after registration login user automatically
+      // automatic log in
       loginUser(options);
     } else {
       const { errors } = json;
