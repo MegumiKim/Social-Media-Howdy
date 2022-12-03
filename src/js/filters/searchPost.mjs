@@ -19,6 +19,7 @@ export function searchPost(searchValue) {
           post.title,
           post.body,
           post.media,
+          post.tags,
           post.created,
           post.id,
           post.author.name,

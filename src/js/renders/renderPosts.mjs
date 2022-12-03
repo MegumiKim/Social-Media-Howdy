@@ -18,11 +18,10 @@ export async function renderPosts() {
       forceLogIn();
       const posts = await requests.fetchData(postsURL);
       save("cached-posts", posts);
-      console.log(posts);
+
       posts.forEach((post) => {
         const card = new Class.Thumbnail(
           post.title,
-          post.body,
           post.media,
           post.tags,
           post.created,

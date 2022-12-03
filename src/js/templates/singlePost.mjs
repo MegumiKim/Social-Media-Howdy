@@ -10,7 +10,7 @@ export function singlePost(postData) {
         <a href="../../../profile/?name=${postData.author}">By ${postData.author}</a>
         <p>${postData.body}</p>
         <div class="d-flex justify-content-between align-items-center">
-          <div class="btn-group">
+          <div class="btn-group mb-3">
             <button id="likeBtn" type="button" class="btn btn-sm btn-outline-secondary" aria-label="like button likes count ${postData.reactionsCount}">🧡 ${postData.reactionsCount}</button>
             <!-- Button trigger modal -->
             <button id="editBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-edit-form">
@@ -19,7 +19,8 @@ export function singlePost(postData) {
             <button id="deleteBtn" style="display:none" type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-delete-form">Delete</button>
           </div>
           <small class="text-muted">${postData.date}</small>
-        </div>
+          </div>
+          <div class='fst-italic'>${postData.tags}</div>
 
         <form class="col mt-4 m-auto" id="comment">
         <div class="form-group mb-3">

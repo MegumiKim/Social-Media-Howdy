@@ -2,7 +2,7 @@ import { blankPostImgURL } from "../api/constants.mjs";
 
 export function postThumbnail(postData) {
   return `
-  <div class='col mx-auto my-3' >
+  <div class='col' p-3 >
     <div class="card shadow-sm thumbnail">
       <a href="../post/?id=${postData.id}">
         <div class="d-flex">
@@ -14,13 +14,20 @@ export function postThumbnail(postData) {
           <div class="card-body" >
             <h5 class="card-text" >${postData.title}</h5>
             <div class="justify-content-between align-items-center">       
-              <p class="text-muted" style="text-align:right">${postData.date}</p>
+              <p class="text-muted" style="text-align:right">${
+                postData.date
+              }</p>
               <p>By ${postData.author}</p>
-            </div>
-            <div class="d-flex align-items-center text-muted">       
-              <p class="me-3" aria-label="likes count ${postData.reactionsCount}">🧡 ${postData.reactionsCount}</p>
-              <p>Comments:  ${postData.commentsCount}</p>
-            </div>
+              </div>
+              <div class="d-flex align-items-center text-muted">       
+              <p class="me-3" aria-label="likes count ${
+                postData.reactionsCount
+              }">🧡 ${postData.reactionsCount}</p>
+              <p>Comments: ${postData.commentsCount}</p>
+              </div>
+              <div id="tag-container" class="text-muted fst-italic"> ${[
+                ...postData.tags,
+              ]}</div>
           </div>
         </div>
       </a>

@@ -12,6 +12,7 @@ export class SinglePost {
     title,
     body,
     media = "",
+    tags,
     date,
     id,
     author,
@@ -22,6 +23,7 @@ export class SinglePost {
     this.title = title;
     this.body = body;
     this.media = media;
+    this.tags = tags;
     this.date = new Date(date).toLocaleDateString();
     this.id = id;
     this.author = author;

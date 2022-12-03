@@ -12,8 +12,9 @@ export async function createPostListener() {
       event.preventDefault();
       // const form = event.target;
       const formData = new FormData(form);
-      const post = Object.fromEntries(formData.entries());
-
+      let post = Object.fromEntries(formData.entries());
+      post.tags = post.tags.split(",");
+      console.log(post);
       requests.createPost(post);
       form.reset();
     });
