@@ -1,24 +1,26 @@
 import { UserThumbnail } from "../Class/index.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
-import { load } from "../storage/session.mjs";
 
 const container = document.querySelector("#followers-container");
 
 /**Render list of user's followers  */
-export async function renderFollowers() {
+export async function renderFollowers(profileData) {
   try {
     if (container) {
-      const myProfile = load("profileDetails");
-      const followers = myProfile.followers;
+      const followers = profileData.followers;
 
-      followers.forEach(({ name, avatar }) => {
-        const card = new UserThumbnail(name, "", avatar);
+      if (!followers.length) {
+        errorMessage(container, `${profileData.name} has no follower.`);
+      } else {
+        followers.forEach(({ name, avatar }) => {
+          const card = new UserThumbnail(name, "", avatar);
 
-        card.render(container);
-      });
+          card.render(container);
+        });
+      }
     }
   } catch (error) {
-    errorMessage(container);
+    errorMessage(container, "Error. Please refresh the page.");
     console.log(error);
   }
 }

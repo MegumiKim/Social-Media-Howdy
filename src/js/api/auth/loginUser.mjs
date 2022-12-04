@@ -21,7 +21,7 @@ export async function loginUser(options) {
 
     if (accessToken) {
       storages.locals.save("accessToken", accessToken);
-      storages.sessions.save("otherDetails", otherDetails);
+      storages.locals.save("otherDetails", otherDetails);
       window.location.replace("../../../../posts/");
     } else {
       const { errors } = json;

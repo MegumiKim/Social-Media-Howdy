@@ -1,4 +1,4 @@
-import * as requests from "../../api/apiRequests/index.mjs";
+import { deletePost } from "../../api/apiRequests/index.mjs";
 
 /**
  * Listen to submit event and
@@ -10,7 +10,7 @@ export async function deletePostListener() {
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      requests.deletePost();
+      deletePost();
     });
   }
 }

@@ -1,6 +1,6 @@
 import * as requests from "../api/apiRequests/index.mjs";
-import * as Class from "../Class/index.mjs";
 import * as constants from "../api/constants.mjs";
+import { SinglePost } from "../Class/index.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
@@ -29,7 +29,7 @@ export async function renderSinglePost() {
         post.media = constants.blankPostImgURL;
       }
 
-      const singlePost = new Class.SinglePost(
+      const singlePost = new SinglePost(
         post.title,
         post.body,
         post.media,

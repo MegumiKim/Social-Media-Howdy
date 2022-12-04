@@ -1,4 +1,4 @@
-import * as API from "../../api/index.mjs";
+import { registerUser } from "../../api/index.mjs";
 
 /**
  * Listen to submit event and
@@ -13,9 +13,22 @@ export async function signUp() {
 
       const formData = new FormData(form);
       const signUpDetails = Object.fromEntries(formData.entries());
-      const options = API.optionsWithBody(form.method, signUpDetails);
+      const options = makeOptions(signUpDetails);
 
-      API.registerUser(options);
+      registerUser(options);
     });
   }
+}
+
+function makeOptions(body) {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  };
+
+  console.log(options);
+  return options;
 }

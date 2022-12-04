@@ -1,11 +1,12 @@
 import { load } from "../storage/local.mjs";
 
-export function optionsWithBody(method, body, auth = "") {
+export function optionsWithBody(method, body) {
+  const token = load("accessToken");
   const options = {
     method: method,
     headers: {
       "Content-Type": "application/json",
-      authorization: auth,
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(body),
   };

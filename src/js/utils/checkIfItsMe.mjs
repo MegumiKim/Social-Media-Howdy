@@ -7,7 +7,6 @@ import { load } from "../storage/local.mjs";
  * */
 export function checkIfItsMe(name) {
   const myName = load("otherDetails").name;
-  console.log(myName, name);
   let itsMe = false;
 
   if (name === myName) {

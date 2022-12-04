@@ -5,9 +5,9 @@ import { BASE_URL } from "../constants.mjs";
 import { optionsWithoutBody } from "../makeOptions.mjs";
 
 export async function deletePost() {
-  getParam("id");
-  const myName = load("otherDetails").name;
+  const id = getParam("id");
   const deletePostURL = `${BASE_URL}/posts/${id}`;
+  const myName = load("otherDetails").name;
 
   try {
     const options = optionsWithoutBody("DELETE");
