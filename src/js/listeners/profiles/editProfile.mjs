@@ -3,6 +3,9 @@ import { BASE_URL } from "../../api/constants.mjs";
 import { fetchData } from "../../api/index.mjs";
 import { editProfile } from "../../api/profiles/index.mjs";
 
+/**
+ * Listen to form submit event and update the profile images
+ */
 export async function editProfileListener() {
   const form = document.querySelector("#editProfile");
 

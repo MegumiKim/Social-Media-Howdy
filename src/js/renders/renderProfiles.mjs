@@ -7,7 +7,7 @@ import { save } from "../storage/session.mjs";
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
-/**Make new user profile thumbnail Class for each profile data fetched from API  */
+/**Render user profile thumbnail for each profile */
 export async function renderProfiles() {
   try {
     if (container) {

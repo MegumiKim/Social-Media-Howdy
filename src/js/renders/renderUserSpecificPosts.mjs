@@ -6,6 +6,9 @@ import { getParam } from "../utils/getParam.mjs";
 
 const container = document.querySelector("#user-specific-posts-container");
 
+/**
+ * Renders the thumbnails of post created by specific profile
+ */
 export async function renderUserSpecificPosts() {
   try {
     if (container) {

@@ -1,7 +1,7 @@
-import * as requests from "../../api/posts/index.mjs";
+import * as requests from "../../api/profiles/index.mjs";
 
 /**
- * Listen to click of the likeBtn on a post.
+ * Listen to click of the follow user btn
  */
 export async function followListener() {
   const followBtn = document.querySelector("#follow-btn");
