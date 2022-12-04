@@ -1,6 +1,8 @@
-import { BASE_URL } from "../constants.mjs";
-import { optionsWithBody } from "../makeOptions.mjs";
-import { renderPosts } from "../../renders/renderPosts.mjs";
+import { BASE_URL, optionsWithBody } from "../index.mjs";
+import {
+  renderSingleProfile,
+  renderUserSpecificPosts,
+} from "../../renders/index.mjs";
 import { errorMessage } from "../../templates/errorMessage.mjs";
 
 const createPostURL = `${BASE_URL}/posts`;
@@ -11,7 +13,7 @@ export async function createPost(postData) {
     const response = await fetch(createPostURL, options);
     const result = await response.json();
     console.log(result);
-    renderPosts();
+    renderUserSpecificPosts();
   } catch (e) {
     console.log(e);
     errorMessage();

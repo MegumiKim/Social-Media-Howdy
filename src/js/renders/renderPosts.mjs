@@ -4,6 +4,7 @@ import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
 import { save } from "../storage/session.mjs";
+import { greeting } from "../utils/geeting.mjs";
 
 const container = document.querySelector("#posts-container");
 const postsURL = `${BASE_URL}/posts?_author=true&_count=true`;
@@ -15,6 +16,8 @@ export async function renderPosts() {
   try {
     if (container) {
       forceLogIn();
+      greeting();
+
       container.innerHTML = "";
       const posts = await fetchData(postsURL);
       save("cached-posts", posts);

@@ -4,105 +4,99 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to Howdy. Share your story and check out updates from your friends">
+    <meta
+      name="description"
+      content="Welcome to Howdy. Share your story and check out updates from your friends"
+    />
     <title>Howdy | Home</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script src="../../src/js/index.mjs" type="module"></script>
-    <script src="https://kit.fontawesome.com/175ecb4e25.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/175ecb4e25.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-md bg-my-bg">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Howdy</a>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse show" id="navbarsExample04" >
+        <div class="navbar-collapse collapse show" id="navbarsExample04">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/posts/">Home</a>
-            </li>
-            <li class="nav-item" >
-              <a class="nav-link" id="my-profile-link" >Profile</a>
+              <a class="nav-link active" aria-current="page" href="/posts/"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#confirm-logout">Log out</a>
+              <a class="nav-link" id="my-profile-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#confirm-logout"
+                >Log out</a
+              >
             </li>
           </ul>
-          <form role="search" id="searchForm">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search posts"
-              aria-label="Search"
-              id="searchInput"
-            />
-          </form>
         </div>
       </div>
     </nav>
     <div class="container">
       <main>
-        <section class="col-lg-6 m-auto mb-2" id="new-post">
-          <!-- Button trigger modal -->     
-          <h4 for="#new-post">Create a new post</h4>
-      <input id="#new-post" type="text" class="form-control col-lg-6 mb-3 border border-4" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-trigger="focus" placeholder="Howdy! Write a post here.">
-      </input>
-<!-- Modal -->
-      <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="postModalLabel">Create a post</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form class="modal-body gx-1" id="createPost">
-              <div class="form-group mb-3">
-                <label for="">Title (required)</label>
-                <input type="text" class="form-control" name="title"  maxlength="30" required>
-              </div>
-            <div class="form-group mb-3">
-              <label for="">Texts</label>
-              <textarea type="text" class="form-control" name="body"  maxlength="150"></textarea>
-            </div>
-            <div class="form-group mb-3">
-              <label for="">Tag</label>
-              <input type="text" class="form-control" name="tags" >
-            </div>
-            <div class="form-group mb-3">
-              <label for="">Media URL</label>
-              <input type="url"  class="form-control" name="media" >
-            </div>
-
-            <div class="modal-footer">
-              <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Publish</button>
-            </div>
-            </form>
-          </div>
-        </div>
-      </div>
-        </section>
+        <h1 id="greeting">Howdy!</h1>
         <section>
           <div class="container">
             <!-- <div class="btn-group mb-3" role="group" aria-label="Button group with nested dropdown"> -->
-              <!-- <button type="button" class="btn btn-secondary">??</button>
+            <!-- <button type="button" class="btn btn-secondary">??</button>
               <button type="button" class="btn btn-secondary">By Reaction</button> -->
 
-              <div class="btn-group mb-3" role="group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sort by date
-                </button>
-                <ul class="dropdown-menu">
-                  <li><button id="old-to-new-btn" class="dropdown-item" href="#">Old to new</button></li>
-                  <li><button id="new-to-old-btn" class="dropdown-item" href="#">New to old</button></li>
-                </ul>
-              </div>
+            <div class="d-flex my-4">
+              <input
+                class="form-control me-5"
+                type="search"
+                placeholder="Search posts"
+                aria-label="Search"
+                id="searchInput"
+              />
+
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Sort by date
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <button id="old-to-new-btn" class="dropdown-item" href="#">
+                    Old to new
+                  </button>
+                </li>
+                <li>
+                  <button id="new-to-old-btn" class="dropdown-item" href="#">
+                    New to old
+                  </button>
+                </li>
+              </ul>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 g-4" id="posts-container" >
-            <!-- <div class="row mt-3" id="posts-container" > -->
-       
-            </div>
+            <div
+              class="row row-cols-1 row-cols-md-2 g-4"
+              id="posts-container"
+            ></div>
           </div>
         </section>
       </main>
@@ -116,28 +110,45 @@
       </footer>
     </div>
 
-        <!-- Modal Confirm Logout-->
-        <div class="modal fade" id="confirm-logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Log out</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Are you sure you want to logout?<p>
-                <div class="modal-footer">
-                  <button class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
-                  <button class="btn btn-primary" 
-                  data-bs-dismiss="modal" id="logout-btn">Log out</button>
-                </div>
-              </div>
+    <!-- Modal Confirm Logout-->
+    <div
+      class="modal fade"
+      id="confirm-logout"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Log out</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to logout?</p>
+            <p></p>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal">
+                Back
+              </button>
+              <button
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                id="logout-btn"
+              >
+                Log out
+              </button>
             </div>
           </div>
         </div>
-
+      </div>
+    </div>
 
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-

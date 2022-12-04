@@ -9,6 +9,7 @@ const container = document.querySelector("#user-specific-posts-container");
 export async function renderUserSpecificPosts() {
   try {
     if (container) {
+      container.innerHTML = "";
       const name = getParam("name");
       const postsByProfileURL = `${BASE_URL}/profiles/${name}/posts?_author=true&_count=true`;
       const posts = await fetchData(postsByProfileURL);
