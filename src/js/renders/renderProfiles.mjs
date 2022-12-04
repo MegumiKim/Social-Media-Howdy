@@ -1,4 +1,4 @@
-import { fetchData } from "../api/apiRequests/index.mjs";
+import { fetchData } from "../api/index.mjs";
 import { UserThumbnail } from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";
@@ -7,7 +7,7 @@ import { save } from "../storage/session.mjs";
 const container = document.querySelector("#profiles-container");
 const profileURL = `${BASE_URL}/profiles`;
 
-/**Make new user profile thumbnail Class for each profile data fetched from API  */
+/**Render user profile thumbnail for each profile */
 export async function renderProfiles() {
   try {
     if (container) {

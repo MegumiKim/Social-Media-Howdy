@@ -1,7 +1,7 @@
-import { fetchData } from "../../api/apiRequests/index.mjs";
+import { fetchData } from "../../api/index.mjs";
 import { BASE_URL } from "../../api/constants.mjs";
 import { getParam } from "../../utils/getParam.mjs";
-import { editPost } from "../../api/apiRequests/index.mjs";
+import { editPost } from "../../api/posts/index.mjs";
 /**
  * Listen to submit event and
  * pass the input value to editPost function

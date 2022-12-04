@@ -4,12 +4,14 @@ export function userProfileTemplate(profile) {
   return `<div class="card m-auto mb-4 p-4" >
   <div>
 
-    <div class="d-flex flex-wrap g-3 mb-3">
-      <img class=" m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';" width="400" height="200" alt="banner for ${profile.name}" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
-      <img class="rounded-circle m-auto" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200" class="h-100 w-100" style="object-position: center center; object-fit: cover">
+    <div class="d-flex mb-3">
+      <img class="m-auto" src="${profile.banner}" onerror="this.onerror=null;this.src='${blankPostImgURL}';"  width="600" height="200"  alt="banner for ${profile.name}" width="100%" class="h-100 w-100" style="object-position: center center; object-fit: cover">
     </div>
 
-    <div class="card-body" style="text-align:center">
+    <div class="card-body d-flex flex-wrap align-items-center justify-content-center" style="text-align:center">
+    <img class="rounded-circle" src="${profile.avatar}" onerror="this.onerror=null;this.src='${blankUserImgURL}';" alt="${profile.name}" width="200" height="200" class="h-100 w-100" style="object-position: center center; object-fit: cover">
+      
+    <div class="m-4">
       <h2>${profile.name}</h2>
       <p>${profile.email}</p>
       <div class="mb-3">${profile.counts.followers} followers | ${profile.counts.following} following | ${profile.counts.posts} posts </div>
@@ -21,7 +23,7 @@ export function userProfileTemplate(profile) {
           <button id="editProfileBtn" type="button" class="btn btn-secondary m-auto d-none" data-bs-toggle="modal" data-bs-target="#edit-profile-modal">
             Change Profile Images
           </button>
-
+    </div>
     </div>
   </div>
 

@@ -1,4 +1,4 @@
-import * as requests from "../../api/apiRequests/index.mjs";
+import * as requests from "../../api/profiles/index.mjs";
 
 /**
  * Listen to click of the likeBtn on a post.

@@ -1,5 +1,8 @@
 import { loginUser } from "../../api/index.mjs";
 
+/**
+ * listen to the form submission and log in user
+ */
 export function login() {
   const form = document.querySelector("#login-form");
 

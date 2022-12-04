@@ -63,6 +63,7 @@ export class UserProfile {
     const editProfileBtn = doc.querySelector("#editProfileBtn");
     const followBtn = doc.querySelector("#follow-btn");
     const unFollowBtn = doc.querySelector("#unfollow-btn");
+    const createPost = document.querySelector("#new-post");
 
     if (!this.amIfollowing) {
       followBtn.classList.remove("d-none");
@@ -73,6 +74,7 @@ export class UserProfile {
       editProfileBtn.classList.remove("d-none");
       followBtn.classList.add("d-none");
       unFollowBtn.classList.add("d-none");
+      createPost.classList.remove("d-none");
     }
     parent.append(element);
   }

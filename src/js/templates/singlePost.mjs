@@ -49,7 +49,9 @@ export function singlePost(postData) {
               <form class="modal-body gx-1" id="deletePost">
                   <p>Are you sure you want to delete the post?<p>
                   <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Back
+                    </button>
                     <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Delete</button>
                   </div>
               </form>
@@ -86,7 +88,9 @@ export function singlePost(postData) {
                       <input type="url"  class="form-control" name="media" >
                     </div>
                     <div class="modal-footer">
-                      <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Back
+                      </button>
                       <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
                     </div>
                 </form>

@@ -1,5 +1,8 @@
 import { remove } from "../../storage/local.mjs";
 
+/**
+ * remove the access token from local storage and redirect the user to log in page
+ */
 export function logout() {
   const logoutBtn = document.querySelector("#logout-btn");
 

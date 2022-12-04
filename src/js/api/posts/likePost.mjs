@@ -1,4 +1,4 @@
-import { renderSinglePost } from "../../renders/renderSinglePost.mjs";
+import { renderSinglePost } from "../../renders/index.mjs";
 import { load } from "../../storage/local.mjs";
 import { getParam } from "../../utils/getParam.mjs";
 import { BASE_URL } from "../constants.mjs";

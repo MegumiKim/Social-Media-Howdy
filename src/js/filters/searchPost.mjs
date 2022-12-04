@@ -17,7 +17,7 @@ export function searchPost(searchValue) {
       posts.forEach((post) => {
         const card = new Thumbnail(
           post.title,
-          post.body,
+          // post.body,
           post.media,
           post.tags,
           post.created,

@@ -1,5 +1,6 @@
 import { load } from "../storage/local.mjs";
 
+/** returns fetch options with body/auth */
 export function optionsWithBody(method, body) {
   const token = load("accessToken");
   const options = {
@@ -15,6 +16,7 @@ export function optionsWithBody(method, body) {
   return options;
 }
 
+/** returns fetch options without body/auth */
 export function optionsWithoutBody(method = "GET") {
   const token = load("accessToken");
 
