@@ -22,7 +22,7 @@ export async function renderProfiles() {
       });
     }
   } catch (error) {
-    errorMessage(container);
+    errorMessage(container, "Please refresh the page");
     console.log(error);
   }
 }
