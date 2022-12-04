@@ -1,4 +1,4 @@
-import { optionsWithoutBody } from "../makeOptions.mjs";
+import { optionsWithoutBody } from "./makeOptions.mjs";
 
 export async function fetchData(url) {
   try {

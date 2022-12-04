@@ -1,4 +1,4 @@
-import { deletePost } from "../../api/apiRequests/index.mjs";
+import { deletePost } from "../../api/posts/index.mjs";
 
 /**
  * Listen to submit event and

@@ -1,4 +1,4 @@
-import { fetchData } from "../api/apiRequests/index.mjs";
+import { fetchData } from "../api/index.mjs";
 import { UserThumbnail } from "../Class/index.mjs";
 import { BASE_URL } from "../api/constants.mjs";
 import { errorMessage } from "../templates/errorMessage.mjs";

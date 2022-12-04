@@ -1,8 +1,8 @@
-import { fetchData } from "../api/apiRequests/index.mjs";
+import { fetchData } from "../api/index.mjs";
 import { UserProfile } from "../Class/index.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 import { BASE_URL } from "../api/constants.mjs";
-import { errorMessage } from "../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/index.mjs";
 import { renderFollowers } from "./renderFollowers.mjs";
 import { renderFollowing } from "./renderFollowing.mjs";
 import { getParam } from "../utils/getParam.mjs";

@@ -1,4 +1,4 @@
-import * as requests from "../../api/apiRequests/index.mjs";
+import * as requests from "../../api/posts/index.mjs";
 
 /**
  * Listen to submit event on create post form and

@@ -18,8 +18,8 @@ export function newToOldListener() {
       posts.forEach((post) => {
         const card = new Thumbnail(
           post.title,
-          post.body,
           post.media,
+          post.tags,
           post.created,
           post.id,
           post.author.name,

@@ -1,8 +1,8 @@
-import * as requests from "../api/apiRequests/index.mjs";
+import * as requests from "../api/index.mjs";
 import * as constants from "../api/constants.mjs";
 import { SinglePost } from "../Class/index.mjs";
 import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
-import { errorMessage } from "../templates/errorMessage.mjs";
+import { errorMessage } from "../templates/index.mjs";
 import { forceLogIn } from "../utils/forceLogIn.mjs";
 import { getParam } from "../utils/getParam.mjs";
 

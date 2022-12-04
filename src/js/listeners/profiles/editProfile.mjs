@@ -1,7 +1,7 @@
 import { load } from "../../storage/local.mjs";
 import { BASE_URL } from "../../api/constants.mjs";
-import { fetchData } from "../../api/apiRequests/index.mjs";
-import { editProfile } from "../../api/apiRequests/editProfile.mjs";
+import { fetchData } from "../../api/index.mjs";
+import { editProfile } from "../../api/profiles/index.mjs";
 
 export async function editProfileListener() {
   const form = document.querySelector("#editProfile");
