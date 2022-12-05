@@ -11,7 +11,7 @@ export function myProfileLink() {
   if (myProfileLink) {
     myProfileLink.addEventListener("click", () => {
       const myName = load("otherDetails").name;
-      window.location.replace(`../../../profile/?name=${myName}`);
+      window.location.replace(`/profile/?name=${myName}`);
     });
   }
 }
