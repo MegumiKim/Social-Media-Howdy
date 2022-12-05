@@ -5,7 +5,7 @@ export function oldToNew(posts) {
 }
 export function newToOld(posts) {
   posts.sort(
-    (a, b) => new Date(a.created).getTime() - new Date(b.created).getTime()
+    (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
   );
   // posts.sort((a, b) => (a.created < b.created ? 1 : -1));
   return posts;
