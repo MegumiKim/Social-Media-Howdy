@@ -1,5 +1,5 @@
 export function oldToNew(posts) {
-  posts.sort((a, b) => (a.created > b.created ? 1 : -1));
+  posts.sort((a, b) => (a.created - b.created));
   console.log(posts);
   return posts;
 }
