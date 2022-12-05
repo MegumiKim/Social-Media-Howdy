@@ -8,7 +8,7 @@ const userAlert = document.querySelector("#user-alert");
  * API call to register new user
  * and login user automatically
  * @param {string} url
- * @param {*} userData
+ * @param {object} userData
  * ```js
  * registerUser(registerUrl, options);
  * ```
