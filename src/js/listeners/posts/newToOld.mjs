@@ -11,7 +11,6 @@ export function newToOldListener() {
       event.preventDefault();
 
       let posts = load("cached-posts");
-      console.log(posts);
       posts = sorts.newToOld(posts);
 
       container.innerHTML = "";

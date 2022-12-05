@@ -14,10 +14,3 @@ export function postsFilter(post, searchValue) {
       return post;
   }
 }
-
-// posts = posts.filter(
-//   ({ title, body }) =>
-//     (title.toLowerCase().includes(searchValue.toLowerCase()))
-//   ||
-//   body.toLowerCase().includes(searchValue.toLowerCase())
-// );
