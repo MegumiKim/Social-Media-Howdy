@@ -11,7 +11,7 @@ export async function likePost() {
     const options = makeOptions();
     const response = await fetch(reactURL, options);
     const result = await response.json();
-    console.log(result);
+
     renderSinglePost();
   } catch (e) {
     console.log(e);

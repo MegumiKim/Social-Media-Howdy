@@ -7,7 +7,7 @@ export async function editPost(postData, url) {
     const options = optionsWithBody(method, postData);
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
+
     renderSinglePost();
   } catch (e) {
     console.log(e);

@@ -11,7 +11,6 @@ export function searchPost(searchValue) {
 
     container.innerHTML = "";
     posts = posts.filter((post) => filters.postsFilter(post, searchValue));
-    console.log(posts);
 
     if (posts.length) {
       posts.forEach((post) => {

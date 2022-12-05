@@ -14,7 +14,6 @@ export async function createPostListener() {
       const formData = new FormData(form);
       let post = Object.fromEntries(formData.entries());
       post.tags = post.tags.split(",");
-      console.log(post);
       requests.createPost(post);
       form.reset();
     });

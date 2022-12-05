@@ -11,7 +11,7 @@ export async function postComment(postData) {
     const options = optionsWithBody("POST", postData);
     const response = await fetch(postCommentURL, options);
     const result = await response.json();
-    console.log(result);
+
     renderSinglePost();
   } catch (e) {
     console.log(e);

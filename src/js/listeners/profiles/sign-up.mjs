@@ -29,6 +29,5 @@ function makeOptions(body) {
     body: JSON.stringify(body),
   };
 
-  console.log(options);
   return options;
 }

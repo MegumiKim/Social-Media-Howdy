@@ -18,7 +18,7 @@ export async function createPost(postData) {
     const options = optionsWithBody("POST", postData);
     const response = await fetch(createPostURL, options);
     const result = await response.json();
-    console.log(result);
+
     renderUserSpecificPosts();
   } catch (e) {
     console.log(e);

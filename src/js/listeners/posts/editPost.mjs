@@ -27,7 +27,7 @@ export async function editPostListener() {
       const formData = new FormData(form);
       let postData = Object.fromEntries(formData.entries());
       postData.tags = postData.tags.split(",");
-      console.log(postData.tags);
+
       editPost(postData, editPostURL);
       // form.reset();
     });

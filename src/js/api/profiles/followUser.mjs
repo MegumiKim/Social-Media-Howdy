@@ -11,7 +11,6 @@ export async function followUser() {
     const options = makeOptions();
     const response = await fetch(followURL, options);
     const result = await response.json();
-    console.log(result);
 
     renderSingleProfile();
   } catch (e) {

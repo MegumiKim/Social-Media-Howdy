@@ -12,7 +12,6 @@ export function optionsWithBody(method, body) {
     body: JSON.stringify(body),
   };
 
-  console.log(options);
   return options;
 }
 
