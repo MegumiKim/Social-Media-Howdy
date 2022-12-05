@@ -22,7 +22,7 @@ export async function loginUser(options) {
     if (accessToken) {
       storages.locals.save("accessToken", accessToken);
       storages.locals.save("otherDetails", otherDetails);
-      window.location.replace("../../../../posts/");
+      window.location.replace("/posts/");
     } else {
       const { errors } = json;
       errors.forEach(({ message }) => {
