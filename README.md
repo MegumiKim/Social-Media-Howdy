@@ -22,7 +22,7 @@ git clone git@github.com:MegumiKim/Social-Media-Howdy.git
 2. Install the dependencies:
 
 ```
-npm install
+npm install bootstrap
 ```
 
 ### Running
