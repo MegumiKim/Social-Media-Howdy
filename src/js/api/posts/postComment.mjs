@@ -14,7 +14,6 @@ export async function postComment(postData) {
 
     renderSinglePost();
   } catch (e) {
-    console.log(e);
     errorMessage();
   }
 }

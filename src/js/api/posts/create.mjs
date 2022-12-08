@@ -21,7 +21,6 @@ export async function createPost(postData) {
 
     renderUserSpecificPosts();
   } catch (e) {
-    console.log(e);
     errorMessage();
   }
 }

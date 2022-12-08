@@ -16,10 +16,9 @@ export async function deletePost() {
     if (response.ok) {
       window.location.replace(`../../../profile/?name=${myName}`);
     } else {
-     throw new Error("failed to delete");
+      throw new Error("failed to delete");
     }
   } catch (e) {
-    console.log(e);
     errorMessage();
   }
 }

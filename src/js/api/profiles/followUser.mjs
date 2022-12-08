@@ -7,15 +7,11 @@ export async function followUser() {
   const name = getParam("name");
   const followURL = `${BASE_URL}/profiles/${name}/follow`;
 
-  try {
-    const options = makeOptions();
-    const response = await fetch(followURL, options);
-    const result = await response.json();
+  const options = makeOptions();
+  const response = await fetch(followURL, options);
+  const result = await response.json();
 
-    renderSingleProfile();
-  } catch (e) {
-    console.log(e);
-  }
+  renderSingleProfile();
 }
 
 function makeOptions() {

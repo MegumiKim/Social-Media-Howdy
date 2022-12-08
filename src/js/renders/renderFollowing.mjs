@@ -21,6 +21,5 @@ export async function renderFollowing(profileData) {
     }
   } catch (error) {
     errorMessage(container, "Error. Please refresh the page.");
-    console.log(error);
   }
 }

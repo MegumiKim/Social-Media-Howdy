@@ -7,15 +7,11 @@ export async function likePost() {
   const id = getParam("id");
   const reactURL = `${BASE_URL}/posts/${id}/react/🧡`;
 
-  try {
-    const options = makeOptions();
-    const response = await fetch(reactURL, options);
-    const result = await response.json();
+  const options = makeOptions();
+  const response = await fetch(reactURL, options);
+  const result = await response.json();
 
-    renderSinglePost();
-  } catch (e) {
-    console.log(e);
-  }
+  renderSinglePost();
 }
 
 function makeOptions() {

@@ -6,13 +6,9 @@ import { optionsWithoutBody } from "./makeOptions.mjs";
  * @returns Result for request in json format
  */
 export async function fetchData(url) {
-  try {
-    const options = optionsWithoutBody();
-    const response = await fetch(url, options);
-    const result = await response.json();
+  const options = optionsWithoutBody();
+  const response = await fetch(url, options);
+  const result = await response.json();
 
-    return result;
-  } catch (e) {
-    console.log(e);
-  }
+  return result;
 }
