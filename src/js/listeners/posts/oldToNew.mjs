@@ -14,18 +14,8 @@ export function oldToNewListener() {
       posts = sorts.oldToNew(posts);
 
       container.innerHTML = "";
-      posts.forEach((post) => {
-        const card = new Thumbnail(
-          post.title,
-          post.media,
-          post.tags,
-          post.created,
-          post.id,
-          post.author.name,
-          post._count
-        );
-        card.render(container);
-      });
+      const instances = posts.map((post) => new Thumbnail(post));
+      instances.forEach((instance) => instance.render(container));
     });
   }
 }

@@ -13,19 +13,8 @@ export function searchPost(searchValue) {
     posts = posts.filter((post) => filters.postsFilter(post, searchValue));
 
     if (posts.length) {
-      posts.forEach((post) => {
-        const card = new Thumbnail(
-          post.title,
-          // post.body,
-          post.media,
-          post.tags,
-          post.created,
-          post.id,
-          post.author.name,
-          post._count
-        );
-        card.render(container);
-      });
+      const instances = posts.map((post) => new Thumbnail(post));
+      instances.forEach((instance) => instance.render(container));
     } else {
       container.innerHTML = `<div class="col m-auto"><h3>No result for "${searchValue}"</h3></div>`;
     }
