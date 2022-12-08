@@ -23,6 +23,5 @@ export async function renderProfiles() {
     }
   } catch (error) {
     errorMessage(container, "Please refresh the page");
-    console.log(error);
   }
 }

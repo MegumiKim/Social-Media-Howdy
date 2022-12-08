@@ -8,28 +8,17 @@ export class SinglePost {
    * Create a post.
    * @param {boolean} myPost This indicates the post in question is whether posted by the user or not by boolean expression.
    */
-  constructor(
-    title,
-    body,
-    media = "",
-    tags,
-    date,
-    id,
-    author,
-    comments,
-    count,
-    myPost
-  ) {
-    this.title = title;
-    this.body = body;
-    this.media = media;
-    this.tags = tags;
-    this.date = new Date(date).toLocaleDateString();
-    this.id = id;
-    this.author = author;
-    this.comments = comments;
-    this.reactionsCount = count.reactions;
-    this.commentsCount = count.comments;
+  constructor(post, myPost) {
+    this.title = post.title;
+    this.body = post.body;
+    this.media = post.media;
+    this.tags = post.tags;
+    this.date = new Date(post.created).toLocaleDateString();
+    this.id = post.id;
+    this.author = post.author.name;
+    this.comments = post.comments;
+    this.reactionsCount = post._count.reactions;
+    this.commentsCount = post._count.comments;
     this.myPost = myPost;
   }
 

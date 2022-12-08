@@ -7,20 +7,17 @@ import { checkIfItsMe } from "../utils/checkIfItsMe.mjs";
 export class UserProfile {
   /**
    *
-   * @param {string} name user name
-   * @param {string} email registered email
-   * @param {string} banner URL for banner image
-   * @param {string} avatar URL for avatar image
+   * @param {object} name user profile data
    * @param {boolean} myProfile Indicates the profile in question is whether the logged in user or not.
    */
-  constructor(name, email, banner, avatar, myProfile, counts, followers) {
-    this.name = name;
-    this.email = email;
-    this.banner = banner;
-    this.avatar = avatar;
+  constructor(profile, myProfile) {
+    this.name = profile.name;
+    this.email = profile.email;
+    this.banner = profile.banner;
+    this.avatar = profile.avatar;
     this.myProfile = myProfile;
-    this.counts = counts;
-    this.followers = followers;
+    this.counts = profile._count;
+    this.followers = profile.followers;
   }
 
   /** Get HTML template for a single profile*/

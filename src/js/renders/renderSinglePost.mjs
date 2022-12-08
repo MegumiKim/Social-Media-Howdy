@@ -30,15 +30,8 @@ export async function renderSinglePost() {
       }
 
       const singlePost = new SinglePost(
-        post.title,
-        post.body,
-        post.media,
-        post.tags,
-        post.created,
-        post.id,
-        post.author.name,
-        post.comments,
-        post._count,
+        post,
+
         itsMe
       );
 
@@ -50,6 +43,5 @@ export async function renderSinglePost() {
     }
   } catch (error) {
     errorMessage(container);
-    console.log(error);
   }
 }

@@ -32,13 +32,15 @@ export async function renderSingleProfile() {
 
       // construct an user profile
       const singleProfile = new UserProfile(
-        profile.name,
-        profile.email,
-        profile.banner,
-        profile.avatar,
-        itsMe,
-        profile._count,
-        profile.followers
+        profile,
+        itsMe
+        // profile.name,
+        // profile.email,
+        // profile.banner,
+        // profile.avatar,
+        // itsMe,
+        // profile._count,
+        // profile.followers
       );
 
       container.innerHTML = "";
@@ -55,6 +57,5 @@ export async function renderSingleProfile() {
     }
   } catch (error) {
     errorMessage(container);
-    console.log(error);
   }
 }

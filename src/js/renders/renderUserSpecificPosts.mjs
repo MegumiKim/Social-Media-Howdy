@@ -20,22 +20,13 @@ export async function renderUserSpecificPosts() {
       if (!posts.length) {
         container.innerHTML = `<h4>No Posts by ${name} 💔</h4>`;
       } else {
-        posts.forEach(({ title, media, tags, created, id, author, _count }) => {
-          const card = new Thumbnail(
-            title,
-            media,
-            tags,
-            created,
-            id,
-            author.name,
-            _count
-          );
-          card.render(container);
+        const instances = posts.map((post) => new Thumbnail(post));
+        instances.forEach((instance) => {
+          instance.render(container);
         });
       }
     }
   } catch (error) {
     errorMessage();
-    console.log(error);
   }
 }
