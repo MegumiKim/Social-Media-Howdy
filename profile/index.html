@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Check and update your profile here" />
+    <title>Howdy | Profile</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="../../src/js/index.mjs" type="module"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md bg-my-bg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../posts/">Howdy</a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse show" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/posts/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="my-profile-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#confirm-logout"
+                >Log out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <main class="row g-5 p-5">
+        <div class="col-12 col-md-8">
+          <section id="about-me" class="col-12">
+            <h3 class="py-1">Profile</h3>
+            <div class="row" id="main-profile-container"></div>
+          </section>
+
+          <section class="col m-auto my-4 d-none" id="new-post">
+            <!-- Button trigger modal -->     
+            <h3 for="#new-post">Create a new post</h3>
+            <input id="#new-post" type="text" class="form-control col-lg-6 mb-3 border border-4" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-trigger="focus" placeholder="Howdy! Write a post here.">
+            </input>
+            <!-- Modal -->
+            <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="postModalLabel">Create a post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <form class="modal-body gx-1" id="createPost">
+                    <div class="form-group mb-3">
+                      <label for="">Title (required)</label>
+                      <input type="text" class="form-control" name="title"  maxlength="30" required>
+                    </div>
+                  <div class="form-group mb-3">
+                    <label for="">Texts</label>
+                    <textarea type="text" class="form-control" name="body"  maxlength="150"></textarea>
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="">Tag</label>
+                    <input type="text" class="form-control" name="tags" >
+                  </div>
+                  <div class="form-group mb-3">
+                    <label for="">Media URL</label>
+                    <input type="url"  class="form-control" name="media" >
+                  </div>
+      
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Publish</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="col-12" >
+            <!-- <section id="my-posts-container" class="col-12"> -->
+            <h3 class="py-1 mt-4">Wall</h3>
+            <div
+              class="list-group w-auto p-4 g-3 "
+              id="user-specific-posts-container"
+              style="max-height:100vh; overflow-y: scroll;"
+            ></div>
+          </section>
+        </div>
+        <section id="contacts-list" class="col-12 col-md-4">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button
+                class="nav-link active"
+                id="nav-home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#all-users"
+                type="button"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                All Users
+              </button>
+              <button
+                class="nav-link"
+                id="nav-profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#followings"
+                type="button"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                Following
+              </button>
+              <button
+                class="nav-link"
+                id="nav-contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#followers"
+                type="button"
+                role="tab"
+                aria-controls="nav-contact"
+                aria-selected="false"
+              >
+                Followers
+              </button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="all-users"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="0"
+
+            >
+              <h3 class="my-3">All Users</h3>
+              <input
+                class="form-control mb-3"
+                type="search"
+                placeholder="Search User"
+                aria-label="Search"
+                id="search-user"
+              />
+              <div class="list-group w-auto" id="profiles-container"
+              style="max-height:160vh; overflow-y: scroll;"></div>
+            </div>
+            <div
+              class="tab-pane fade show"
+              id="followings"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="1"
+              style="max-height:160vh; overflow-y: scroll;"
+            >
+              <h3 class="my-3">Following</h3>
+              <div class="list-group w-auto" id="following-container"></div>
+            </div>
+            <div
+              class="tab-pane fade show"
+              id="followers"
+              role="tabpanel"
+              aria-labelledby="nav-home-tab"
+              tabindex="2"
+              style="max-height:100vh; overflow-y: scroll;"
+            >
+              <h3 class="my-3">Followers</h3>
+              <div class="list-group w-auto" id="followers-container"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2022 Social App</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+        <!-- Modal Confirm Logout-->
+        <div
+        class="modal fade"
+        id="confirm-logout"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Log out</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to logout?</p>
+              <p></p>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                  Back
+                </button>
+                <button
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  id="logout-btn"
+                >
+                  Log out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
