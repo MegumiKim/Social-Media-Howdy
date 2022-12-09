@@ -31,17 +31,7 @@ export async function renderSingleProfile() {
       pageTitle.innerHTML = `HOWDY | ${profile.name}`;
 
       // construct an user profile
-      const singleProfile = new UserProfile(
-        profile,
-        itsMe
-        // profile.name,
-        // profile.email,
-        // profile.banner,
-        // profile.avatar,
-        // itsMe,
-        // profile._count,
-        // profile.followers
-      );
+      const singleProfile = new UserProfile(profile, itsMe);
 
       container.innerHTML = "";
       singleProfile.render(container);

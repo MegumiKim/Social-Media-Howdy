@@ -29,11 +29,7 @@ export async function renderSinglePost() {
         post.media = constants.blankPostImgURL;
       }
 
-      const singlePost = new SinglePost(
-        post,
-
-        itsMe
-      );
+      const singlePost = new SinglePost(post, itsMe);
 
       singlePost.render(container);
       singlePost.postComment();
