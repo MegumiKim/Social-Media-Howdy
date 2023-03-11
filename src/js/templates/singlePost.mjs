@@ -1,9 +1,13 @@
+import { blankPostImgURL } from "../api/constants.mjs";
+
 export function singlePost(postData) {
   return `
   <div class='col col-lg-8 m-auto' id='singlePost'>
     <div class="card shadow-sm">
       <div class="card-img-top" style="overflow:hidden; max-height:500px;">
-        <img src="${postData.media} alt="${postData.title}" class="h-100 w-100"></img>
+        <img src="${postData.media}"  
+        onerror="this.onerror=null;this.src='${blankPostImgURL}'"
+        alt="${postData.title}" class="h-100 w-100"></img>
       </div>
       <div class="card-body p-5">
         <h3 class="card-text">${postData.title}</h3>

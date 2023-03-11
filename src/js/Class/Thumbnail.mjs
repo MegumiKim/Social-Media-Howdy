@@ -9,7 +9,7 @@ export class Thumbnail {
   constructor(post) {
     this.media = post.media;
     this.title = post.title;
-    this.tags = post.tags;
+    this.tags = [...post.tags];
     this.date = new Date(post.created).toLocaleDateString("en-GB");
     this.id = post.id;
     this.author = post.author.name;

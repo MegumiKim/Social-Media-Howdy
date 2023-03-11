@@ -26,7 +26,7 @@ export function postThumbnail(postData) {
               <p>Comments: ${postData.commentsCount}</p>
               </div>
               <div id="tag-container" class="text-muted fst-italic"> ${[
-                ...postData.tags,
+                postData.tags,
               ]}</div>
           </div>
         </div>

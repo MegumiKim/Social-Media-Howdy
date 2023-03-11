@@ -41,6 +41,14 @@ To run the app, run the following commands:
 npm run start
 ```
 
+### Sign up
+
+Please explore the site by logging-in with following test credentials:
+email: test_user@noroff.no
+password: 11111111
+
+Or by creating a new account with @noroff.no domain email.
+
 ## Contributing
 
 Please report bugs or send feedbacks for future improvement.
