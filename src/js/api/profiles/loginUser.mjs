@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants.mjs";
+import { BASE_URL } from "./../constants.mjs";
 import * as storages from "../../storage/index.mjs";
 
 const registerURL = `${BASE_URL}/auth/login`;
@@ -22,7 +22,7 @@ export async function loginUser(options) {
   if (accessToken) {
     storages.locals.save("accessToken", accessToken);
     storages.locals.save("otherDetails", otherDetails);
-    window.location.assign("/posts/");
+    window.location.assign("./posts/index.html");
   } else {
     const { errors } = json;
     errors.forEach(({ message }) => {
